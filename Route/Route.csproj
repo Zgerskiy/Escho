@@ -90,6 +90,12 @@
     <Compile Include="Forms\productTypesForm.Designer.cs">
       <DependentUpon>productTypesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RegionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegionForm.Designer.cs">
+      <DependentUpon>RegionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ShopRequestsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\productTypesForm.resx">
       <DependentUpon>productTypesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegionForm.resx">
+      <DependentUpon>RegionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RouteForm.resx">
       <DependentUpon>RouteForm.cs</DependentUpon>

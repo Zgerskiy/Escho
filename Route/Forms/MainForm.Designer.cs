@@ -37,6 +37,7 @@
             this.carTypesButton = new System.Windows.Forms.Button();
             this.unitsButton = new System.Windows.Forms.Button();
             this.prodTypeButtons = new System.Windows.Forms.Button();
+            this.regionsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // carsButton
@@ -129,11 +130,22 @@
             this.prodTypeButtons.UseVisualStyleBackColor = true;
             this.prodTypeButtons.Click += new System.EventHandler(this.prodTypeButtons_Click);
             // 
+            // regionsButton
+            // 
+            this.regionsButton.Location = new System.Drawing.Point(22, 328);
+            this.regionsButton.Name = "regionsButton";
+            this.regionsButton.Size = new System.Drawing.Size(129, 23);
+            this.regionsButton.TabIndex = 9;
+            this.regionsButton.Text = "Районы";
+            this.regionsButton.UseVisualStyleBackColor = true;
+            this.regionsButton.Click += new System.EventHandler(this.regionsButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.regionsButton);
             this.Controls.Add(this.prodTypeButtons);
             this.Controls.Add(this.unitsButton);
             this.Controls.Add(this.carTypesButton);
@@ -160,5 +172,6 @@
         private System.Windows.Forms.Button carTypesButton;
         private System.Windows.Forms.Button unitsButton;
         private System.Windows.Forms.Button prodTypeButtons;
+        private System.Windows.Forms.Button regionsButton;
     }
 }

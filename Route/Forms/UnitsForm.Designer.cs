@@ -31,24 +31,33 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label unit_nameLabel;
             this.unitGroupBox = new System.Windows.Forms.GroupBox();
+            this.unit_nameTextBox = new System.Windows.Forms.TextBox();
+            this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.milkWorkDataSet = new Route.MilkWorkDataSet();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.unitsDataGridView = new System.Windows.Forms.DataGridView();
-            this.addButton = new System.Windows.Forms.Button();
-            this.milkWorkDataSet = new Route.MilkWorkDataSet();
-            this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.unitTableAdapter = new Route.MilkWorkDataSetTableAdapters.UnitTableAdapter();
             this.unitnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addButton = new System.Windows.Forms.Button();
+            this.unitTableAdapter = new Route.MilkWorkDataSetTableAdapters.UnitTableAdapter();
             this.tableAdapterManager = new Route.MilkWorkDataSetTableAdapters.TableAdapterManager();
-            this.unit_nameTextBox = new System.Windows.Forms.TextBox();
             unit_nameLabel = new System.Windows.Forms.Label();
             this.unitGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.unitsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitsDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // unit_nameLabel
+            // 
+            unit_nameLabel.AutoSize = true;
+            unit_nameLabel.Location = new System.Drawing.Point(6, 16);
+            unit_nameLabel.Name = "unit_nameLabel";
+            unit_nameLabel.Size = new System.Drawing.Size(112, 13);
+            unit_nameLabel.TabIndex = 5;
+            unit_nameLabel.Text = "Единица измерения:";
             // 
             // unitGroupBox
             // 
@@ -65,7 +74,27 @@
             this.unitGroupBox.Size = new System.Drawing.Size(248, 101);
             this.unitGroupBox.TabIndex = 9;
             this.unitGroupBox.TabStop = false;
-            this.unitGroupBox.Text = "Информация о марке";
+            this.unitGroupBox.Text = "Информация о единице измерения";
+            // 
+            // unit_nameTextBox
+            // 
+            this.unit_nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.unit_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.unitBindingSource, "Unit_name", true));
+            this.unit_nameTextBox.Location = new System.Drawing.Point(6, 32);
+            this.unit_nameTextBox.Name = "unit_nameTextBox";
+            this.unit_nameTextBox.Size = new System.Drawing.Size(236, 20);
+            this.unit_nameTextBox.TabIndex = 6;
+            // 
+            // unitBindingSource
+            // 
+            this.unitBindingSource.DataMember = "Unit";
+            this.unitBindingSource.DataSource = this.milkWorkDataSet;
+            // 
+            // milkWorkDataSet
+            // 
+            this.milkWorkDataSet.DataSetName = "MilkWorkDataSet";
+            this.milkWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cancelButton
             // 
@@ -127,6 +156,13 @@
             this.unitsDataGridView.Size = new System.Drawing.Size(248, 239);
             this.unitsDataGridView.TabIndex = 6;
             // 
+            // unitnameDataGridViewTextBoxColumn
+            // 
+            this.unitnameDataGridViewTextBoxColumn.DataPropertyName = "Unit_name";
+            this.unitnameDataGridViewTextBoxColumn.HeaderText = "Единица измерения";
+            this.unitnameDataGridViewTextBoxColumn.Name = "unitnameDataGridViewTextBoxColumn";
+            this.unitnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // addButton
             // 
             this.addButton.Location = new System.Drawing.Point(12, 7);
@@ -137,26 +173,9 @@
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // milkWorkDataSet
-            // 
-            this.milkWorkDataSet.DataSetName = "MilkWorkDataSet";
-            this.milkWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // unitBindingSource
-            // 
-            this.unitBindingSource.DataMember = "Unit";
-            this.unitBindingSource.DataSource = this.milkWorkDataSet;
-            // 
             // unitTableAdapter
             // 
             this.unitTableAdapter.ClearBeforeFill = true;
-            // 
-            // unitnameDataGridViewTextBoxColumn
-            // 
-            this.unitnameDataGridViewTextBoxColumn.DataPropertyName = "Unit_name";
-            this.unitnameDataGridViewTextBoxColumn.HeaderText = "Единица измерения";
-            this.unitnameDataGridViewTextBoxColumn.Name = "unitnameDataGridViewTextBoxColumn";
-            this.unitnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tableAdapterManager
             // 
@@ -186,25 +205,6 @@
             this.tableAdapterManager.UnitTableAdapter = this.unitTableAdapter;
             this.tableAdapterManager.UpdateOrder = Route.MilkWorkDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // unit_nameLabel
-            // 
-            unit_nameLabel.AutoSize = true;
-            unit_nameLabel.Location = new System.Drawing.Point(6, 16);
-            unit_nameLabel.Name = "unit_nameLabel";
-            unit_nameLabel.Size = new System.Drawing.Size(112, 13);
-            unit_nameLabel.TabIndex = 5;
-            unit_nameLabel.Text = "Единица измерения:";
-            // 
-            // unit_nameTextBox
-            // 
-            this.unit_nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.unit_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.unitBindingSource, "Unit_name", true));
-            this.unit_nameTextBox.Location = new System.Drawing.Point(6, 32);
-            this.unit_nameTextBox.Name = "unit_nameTextBox";
-            this.unit_nameTextBox.Size = new System.Drawing.Size(236, 20);
-            this.unit_nameTextBox.TabIndex = 6;
-            // 
             // UnitsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,9 +220,9 @@
             this.Load += new System.EventHandler(this.UnitsForm_Load);
             this.unitGroupBox.ResumeLayout(false);
             this.unitGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.unitsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }

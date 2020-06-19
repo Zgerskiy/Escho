@@ -61,5 +61,10 @@ namespace Route.Forms
         {
             new productTypesForm().ShowDialog();
         }
+
+        private void regionsButton_Click(object sender, EventArgs e)
+        {
+            new RegionForm().ShowDialog();
+        }
     }
 }
