@@ -66,5 +66,25 @@ namespace Route.Forms
         {
             new RegionForm().ShowDialog();
         }
+
+        private void localityTypesButton_Click(object sender, EventArgs e)
+        {
+            new LocalityTypesForm().ShowDialog();
+        }
+
+        private void areasButton_Click(object sender, EventArgs e)
+        {
+            new AreasForm().ShowDialog();
+        }
+
+        private void localitiesButton_Click(object sender, EventArgs e)
+        {
+            new LocalitiesForm().ShowDialog();
+        }
+
+        private void streetsButton_Click(object sender, EventArgs e)
+        {
+            new StreetsForm().ShowDialog();
+        }
     }
 }

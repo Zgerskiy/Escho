@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AreasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AreasForm.Designer.cs">
+      <DependentUpon>AreasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CarsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,18 @@
     </Compile>
     <Compile Include="Forms\CarTypesForm.Designer.cs">
       <DependentUpon>CarTypesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LocalitiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LocalitiesForm.Designer.cs">
+      <DependentUpon>LocalitiesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LocalityTypesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LocalityTypesForm.Designer.cs">
+      <DependentUpon>LocalityTypesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -101,6 +119,12 @@
     </Compile>
     <Compile Include="Forms\ShopRequestsForm.Designer.cs">
       <DependentUpon>ShopRequestsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StreetsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StreetsForm.Designer.cs">
+      <DependentUpon>StreetsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UnitsForm.cs">
       <SubType>Form</SubType>
@@ -145,11 +169,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AreasForm.resx">
+      <DependentUpon>AreasForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CarsForm.resx">
       <DependentUpon>CarsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CarTypesForm.resx">
       <DependentUpon>CarTypesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LocalitiesForm.resx">
+      <DependentUpon>LocalitiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LocalityTypesForm.resx">
+      <DependentUpon>LocalityTypesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -174,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ShopRequestsForm.resx">
       <DependentUpon>ShopRequestsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StreetsForm.resx">
+      <DependentUpon>StreetsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UnitsForm.resx">
       <DependentUpon>UnitsForm.cs</DependentUpon>

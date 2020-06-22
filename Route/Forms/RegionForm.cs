@@ -26,7 +26,7 @@ namespace Route.Forms
         private void addButton_Click(object sender, EventArgs e)
         {
             regionBindingSource.AddNew();
-            regionGroupBox.Enabled = false;
+            regionGroupBox.Enabled = true;
         }
 
         private void editButton_Click(object sender, EventArgs e)

@@ -38,6 +38,10 @@
             this.unitsButton = new System.Windows.Forms.Button();
             this.prodTypeButtons = new System.Windows.Forms.Button();
             this.regionsButton = new System.Windows.Forms.Button();
+            this.localityTypesButton = new System.Windows.Forms.Button();
+            this.areasButton = new System.Windows.Forms.Button();
+            this.localitiesButton = new System.Windows.Forms.Button();
+            this.streetsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // carsButton
@@ -132,19 +136,63 @@
             // 
             // regionsButton
             // 
-            this.regionsButton.Location = new System.Drawing.Point(22, 328);
+            this.regionsButton.Location = new System.Drawing.Point(240, 12);
             this.regionsButton.Name = "regionsButton";
             this.regionsButton.Size = new System.Drawing.Size(129, 23);
             this.regionsButton.TabIndex = 9;
-            this.regionsButton.Text = "Районы";
+            this.regionsButton.Text = "Области";
             this.regionsButton.UseVisualStyleBackColor = true;
             this.regionsButton.Click += new System.EventHandler(this.regionsButton_Click);
+            // 
+            // localityTypesButton
+            // 
+            this.localityTypesButton.Location = new System.Drawing.Point(240, 70);
+            this.localityTypesButton.Name = "localityTypesButton";
+            this.localityTypesButton.Size = new System.Drawing.Size(129, 23);
+            this.localityTypesButton.TabIndex = 10;
+            this.localityTypesButton.Text = "Типы нас. пунктов";
+            this.localityTypesButton.UseVisualStyleBackColor = true;
+            this.localityTypesButton.Click += new System.EventHandler(this.localityTypesButton_Click);
+            // 
+            // areasButton
+            // 
+            this.areasButton.Location = new System.Drawing.Point(240, 41);
+            this.areasButton.Name = "areasButton";
+            this.areasButton.Size = new System.Drawing.Size(129, 23);
+            this.areasButton.TabIndex = 11;
+            this.areasButton.Text = "Районы";
+            this.areasButton.UseVisualStyleBackColor = true;
+            this.areasButton.Click += new System.EventHandler(this.areasButton_Click);
+            // 
+            // localitiesButton
+            // 
+            this.localitiesButton.Location = new System.Drawing.Point(240, 99);
+            this.localitiesButton.Name = "localitiesButton";
+            this.localitiesButton.Size = new System.Drawing.Size(129, 23);
+            this.localitiesButton.TabIndex = 12;
+            this.localitiesButton.Text = "Населенные пункты";
+            this.localitiesButton.UseVisualStyleBackColor = true;
+            this.localitiesButton.Click += new System.EventHandler(this.localitiesButton_Click);
+            // 
+            // streetsButton
+            // 
+            this.streetsButton.Location = new System.Drawing.Point(240, 128);
+            this.streetsButton.Name = "streetsButton";
+            this.streetsButton.Size = new System.Drawing.Size(129, 23);
+            this.streetsButton.TabIndex = 13;
+            this.streetsButton.Text = "Улицы";
+            this.streetsButton.UseVisualStyleBackColor = true;
+            this.streetsButton.Click += new System.EventHandler(this.streetsButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.streetsButton);
+            this.Controls.Add(this.localitiesButton);
+            this.Controls.Add(this.areasButton);
+            this.Controls.Add(this.localityTypesButton);
             this.Controls.Add(this.regionsButton);
             this.Controls.Add(this.prodTypeButtons);
             this.Controls.Add(this.unitsButton);
@@ -173,5 +221,9 @@
         private System.Windows.Forms.Button unitsButton;
         private System.Windows.Forms.Button prodTypeButtons;
         private System.Windows.Forms.Button regionsButton;
+        private System.Windows.Forms.Button localityTypesButton;
+        private System.Windows.Forms.Button areasButton;
+        private System.Windows.Forms.Button localitiesButton;
+        private System.Windows.Forms.Button streetsButton;
     }
 }

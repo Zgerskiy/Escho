@@ -1209,6 +1209,8 @@ namespace Route {
             
             private global::System.Data.DataColumn columnId_region;
             
+            private global::System.Data.DataColumn columnRegion_name;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public AreaDataTable() {
@@ -1268,6 +1270,14 @@ namespace Route {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Region_nameColumn {
+                get {
+                    return this.columnRegion_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1303,12 +1313,13 @@ namespace Route {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AreaRow AddAreaRow(string Area_name, RegionRow parentRegionRowByFK__Area__Id_region__3C69FB99) {
+            public AreaRow AddAreaRow(string Area_name, RegionRow parentRegionRowByFK__Area__Id_region__3C69FB99, string Region_name) {
                 AreaRow rowAreaRow = ((AreaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Area_name,
-                        null};
+                        null,
+                        Region_name};
                 if ((parentRegionRowByFK__Area__Id_region__3C69FB99 != null)) {
                     columnValuesArray[2] = parentRegionRowByFK__Area__Id_region__3C69FB99[0];
                 }
@@ -1344,6 +1355,7 @@ namespace Route {
                 this.columnId_area = base.Columns["Id_area"];
                 this.columnArea_name = base.Columns["Area_name"];
                 this.columnId_region = base.Columns["Id_region"];
+                this.columnRegion_name = base.Columns["Region_name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1355,6 +1367,8 @@ namespace Route {
                 base.Columns.Add(this.columnArea_name);
                 this.columnId_region = new global::System.Data.DataColumn("Id_region", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId_region);
+                this.columnRegion_name = new global::System.Data.DataColumn("Region_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRegion_name);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_area}, true));
                 this.columnId_area.AutoIncrement = true;
@@ -1366,6 +1380,7 @@ namespace Route {
                 this.columnArea_name.AllowDBNull = false;
                 this.columnArea_name.MaxLength = 200;
                 this.columnId_region.AllowDBNull = false;
+                this.columnRegion_name.MaxLength = 200;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2097,6 +2112,16 @@ namespace Route {
             
             private global::System.Data.DataColumn columnId_locality_type;
             
+            private global::System.Data.DataColumn columnArea_name;
+            
+            private global::System.Data.DataColumn columnId_region;
+            
+            private global::System.Data.DataColumn columnRegion_name;
+            
+            private global::System.Data.DataColumn columnLocality_type_name;
+            
+            private global::System.Data.DataColumn columnAddress;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LocalityDataTable() {
@@ -2164,6 +2189,46 @@ namespace Route {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Area_nameColumn {
+                get {
+                    return this.columnArea_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Id_regionColumn {
+                get {
+                    return this.columnId_region;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Region_nameColumn {
+                get {
+                    return this.columnRegion_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Locality_type_nameColumn {
+                get {
+                    return this.columnLocality_type_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AddressColumn {
+                get {
+                    return this.columnAddress;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2199,13 +2264,18 @@ namespace Route {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LocalityRow AddLocalityRow(string Locality_name, AreaRow parentAreaRowByFK__Locality__Id_are__4222D4EF, Locality_typeRow parentLocality_typeRowByFK__Locality__Id_loc__4316F928) {
+            public LocalityRow AddLocalityRow(string Locality_name, AreaRow parentAreaRowByFK__Locality__Id_are__4222D4EF, Locality_typeRow parentLocality_typeRowByFK__Locality__Id_loc__4316F928, string Area_name, int Id_region, string Region_name, string Locality_type_name, string Address) {
                 LocalityRow rowLocalityRow = ((LocalityRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Locality_name,
                         null,
-                        null};
+                        null,
+                        Area_name,
+                        Id_region,
+                        Region_name,
+                        Locality_type_name,
+                        Address};
                 if ((parentAreaRowByFK__Locality__Id_are__4222D4EF != null)) {
                     columnValuesArray[2] = parentAreaRowByFK__Locality__Id_are__4222D4EF[0];
                 }
@@ -2245,6 +2315,11 @@ namespace Route {
                 this.columnLocality_name = base.Columns["Locality_name"];
                 this.columnId_area = base.Columns["Id_area"];
                 this.columnId_locality_type = base.Columns["Id_locality_type"];
+                this.columnArea_name = base.Columns["Area_name"];
+                this.columnId_region = base.Columns["Id_region"];
+                this.columnRegion_name = base.Columns["Region_name"];
+                this.columnLocality_type_name = base.Columns["Locality_type_name"];
+                this.columnAddress = base.Columns["Address"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2258,6 +2333,16 @@ namespace Route {
                 base.Columns.Add(this.columnId_area);
                 this.columnId_locality_type = new global::System.Data.DataColumn("Id_locality_type", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId_locality_type);
+                this.columnArea_name = new global::System.Data.DataColumn("Area_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnArea_name);
+                this.columnId_region = new global::System.Data.DataColumn("Id_region", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId_region);
+                this.columnRegion_name = new global::System.Data.DataColumn("Region_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRegion_name);
+                this.columnLocality_type_name = new global::System.Data.DataColumn("Locality_type_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLocality_type_name);
+                this.columnAddress = new global::System.Data.DataColumn("Address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAddress);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_locality}, true));
                 this.columnId_locality.AutoIncrement = true;
@@ -2269,6 +2354,15 @@ namespace Route {
                 this.columnLocality_name.AllowDBNull = false;
                 this.columnLocality_name.MaxLength = 200;
                 this.columnId_area.AllowDBNull = false;
+                this.columnArea_name.AllowDBNull = false;
+                this.columnArea_name.MaxLength = 200;
+                this.columnId_region.AllowDBNull = false;
+                this.columnRegion_name.AllowDBNull = false;
+                this.columnRegion_name.MaxLength = 200;
+                this.columnLocality_type_name.AllowDBNull = false;
+                this.columnLocality_type_name.MaxLength = 200;
+                this.columnAddress.ReadOnly = true;
+                this.columnAddress.MaxLength = 401;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5409,6 +5503,20 @@ namespace Route {
             
             private global::System.Data.DataColumn columnId_locality;
             
+            private global::System.Data.DataColumn columnId_area;
+            
+            private global::System.Data.DataColumn columnArea_name;
+            
+            private global::System.Data.DataColumn columnId_region;
+            
+            private global::System.Data.DataColumn columnRegion_name;
+            
+            private global::System.Data.DataColumn columnLocality_name;
+            
+            private global::System.Data.DataColumn columnId_locality_type;
+            
+            private global::System.Data.DataColumn columnLocality_type_name;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public StreetDataTable() {
@@ -5468,6 +5576,62 @@ namespace Route {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Id_areaColumn {
+                get {
+                    return this.columnId_area;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Area_nameColumn {
+                get {
+                    return this.columnArea_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Id_regionColumn {
+                get {
+                    return this.columnId_region;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Region_nameColumn {
+                get {
+                    return this.columnRegion_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Locality_nameColumn {
+                get {
+                    return this.columnLocality_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Id_locality_typeColumn {
+                get {
+                    return this.columnId_locality_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Locality_type_nameColumn {
+                get {
+                    return this.columnLocality_type_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5503,12 +5667,19 @@ namespace Route {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public StreetRow AddStreetRow(string Street_name, LocalityRow parentLocalityRowByFK__Street__Id_local__45F365D3) {
+            public StreetRow AddStreetRow(string Street_name, LocalityRow parentLocalityRowByFK__Street__Id_local__45F365D3, string Area_name, string Region_name, string Locality_name, string Locality_type_name) {
                 StreetRow rowStreetRow = ((StreetRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Street_name,
-                        null};
+                        null,
+                        null,
+                        Area_name,
+                        null,
+                        Region_name,
+                        Locality_name,
+                        null,
+                        Locality_type_name};
                 if ((parentLocalityRowByFK__Street__Id_local__45F365D3 != null)) {
                     columnValuesArray[2] = parentLocalityRowByFK__Street__Id_local__45F365D3[0];
                 }
@@ -5544,6 +5715,13 @@ namespace Route {
                 this.columnId_street = base.Columns["Id_street"];
                 this.columnStreet_name = base.Columns["Street_name"];
                 this.columnId_locality = base.Columns["Id_locality"];
+                this.columnId_area = base.Columns["Id_area"];
+                this.columnArea_name = base.Columns["Area_name"];
+                this.columnId_region = base.Columns["Id_region"];
+                this.columnRegion_name = base.Columns["Region_name"];
+                this.columnLocality_name = base.Columns["Locality_name"];
+                this.columnId_locality_type = base.Columns["Id_locality_type"];
+                this.columnLocality_type_name = base.Columns["Locality_type_name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5555,6 +5733,20 @@ namespace Route {
                 base.Columns.Add(this.columnStreet_name);
                 this.columnId_locality = new global::System.Data.DataColumn("Id_locality", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId_locality);
+                this.columnId_area = new global::System.Data.DataColumn("Id_area", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId_area);
+                this.columnArea_name = new global::System.Data.DataColumn("Area_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnArea_name);
+                this.columnId_region = new global::System.Data.DataColumn("Id_region", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId_region);
+                this.columnRegion_name = new global::System.Data.DataColumn("Region_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRegion_name);
+                this.columnLocality_name = new global::System.Data.DataColumn("Locality_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLocality_name);
+                this.columnId_locality_type = new global::System.Data.DataColumn("Id_locality_type", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId_locality_type);
+                this.columnLocality_type_name = new global::System.Data.DataColumn("Locality_type_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLocality_type_name);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_street}, true));
                 this.columnId_street.AutoIncrement = true;
@@ -5566,6 +5758,22 @@ namespace Route {
                 this.columnStreet_name.AllowDBNull = false;
                 this.columnStreet_name.MaxLength = 200;
                 this.columnId_locality.AllowDBNull = false;
+                this.columnId_area.AutoIncrement = true;
+                this.columnId_area.AutoIncrementSeed = -1;
+                this.columnId_area.AutoIncrementStep = -1;
+                this.columnId_area.ReadOnly = true;
+                this.columnArea_name.MaxLength = 200;
+                this.columnId_region.AutoIncrement = true;
+                this.columnId_region.AutoIncrementSeed = -1;
+                this.columnId_region.AutoIncrementStep = -1;
+                this.columnId_region.ReadOnly = true;
+                this.columnRegion_name.MaxLength = 200;
+                this.columnLocality_name.MaxLength = 200;
+                this.columnId_locality_type.AutoIncrement = true;
+                this.columnId_locality_type.AutoIncrementSeed = -1;
+                this.columnId_locality_type.AutoIncrementStep = -1;
+                this.columnId_locality_type.ReadOnly = true;
+                this.columnLocality_type_name.MaxLength = 200;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8699,6 +8907,22 @@ namespace Route {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Region_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableArea.Region_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Region_name\' в таблице \'Area\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableArea.Region_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public RegionRow RegionRow {
                 get {
                     return ((RegionRow)(this.GetParentRow(this.Table.ParentRelations["FK__Area__Id_region__3C69FB99"])));
@@ -8706,6 +8930,18 @@ namespace Route {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__Area__Id_region__3C69FB99"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsRegion_nameNull() {
+                return this.IsNull(this.tableArea.Region_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetRegion_nameNull() {
+                this[this.tableArea.Region_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8970,6 +9206,66 @@ namespace Route {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Area_name {
+                get {
+                    return ((string)(this[this.tableLocality.Area_nameColumn]));
+                }
+                set {
+                    this[this.tableLocality.Area_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Id_region {
+                get {
+                    return ((int)(this[this.tableLocality.Id_regionColumn]));
+                }
+                set {
+                    this[this.tableLocality.Id_regionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Region_name {
+                get {
+                    return ((string)(this[this.tableLocality.Region_nameColumn]));
+                }
+                set {
+                    this[this.tableLocality.Region_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Locality_type_name {
+                get {
+                    return ((string)(this[this.tableLocality.Locality_type_nameColumn]));
+                }
+                set {
+                    this[this.tableLocality.Locality_type_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Address {
+                get {
+                    try {
+                        return ((string)(this[this.tableLocality.AddressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Address\' в таблице \'Locality\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLocality.AddressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public AreaRow AreaRow {
                 get {
                     return ((AreaRow)(this.GetParentRow(this.Table.ParentRelations["FK__Locality__Id_are__4222D4EF"])));
@@ -9000,6 +9296,18 @@ namespace Route {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetId_locality_typeNull() {
                 this[this.tableLocality.Id_locality_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAddressNull() {
+                return this.IsNull(this.tableLocality.AddressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAddressNull() {
+                this[this.tableLocality.AddressColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9802,6 +10110,118 @@ namespace Route {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Id_area {
+                get {
+                    try {
+                        return ((int)(this[this.tableStreet.Id_areaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Id_area\' в таблице \'Street\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStreet.Id_areaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Area_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableStreet.Area_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Area_name\' в таблице \'Street\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStreet.Area_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Id_region {
+                get {
+                    try {
+                        return ((int)(this[this.tableStreet.Id_regionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Id_region\' в таблице \'Street\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStreet.Id_regionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Region_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableStreet.Region_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Region_name\' в таблице \'Street\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStreet.Region_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Locality_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableStreet.Locality_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Locality_name\' в таблице \'Street\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStreet.Locality_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Id_locality_type {
+                get {
+                    try {
+                        return ((int)(this[this.tableStreet.Id_locality_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Id_locality_type\' в таблице \'Street\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStreet.Id_locality_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Locality_type_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableStreet.Locality_type_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Locality_type_name\' в таблице \'Street\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStreet.Locality_type_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LocalityRow LocalityRow {
                 get {
                     return ((LocalityRow)(this.GetParentRow(this.Table.ParentRelations["FK__Street__Id_local__45F365D3"])));
@@ -9809,6 +10229,90 @@ namespace Route {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__Street__Id_local__45F365D3"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsId_areaNull() {
+                return this.IsNull(this.tableStreet.Id_areaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetId_areaNull() {
+                this[this.tableStreet.Id_areaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsArea_nameNull() {
+                return this.IsNull(this.tableStreet.Area_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetArea_nameNull() {
+                this[this.tableStreet.Area_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsId_regionNull() {
+                return this.IsNull(this.tableStreet.Id_regionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetId_regionNull() {
+                this[this.tableStreet.Id_regionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsRegion_nameNull() {
+                return this.IsNull(this.tableStreet.Region_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetRegion_nameNull() {
+                this[this.tableStreet.Region_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLocality_nameNull() {
+                return this.IsNull(this.tableStreet.Locality_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLocality_nameNull() {
+                this[this.tableStreet.Locality_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsId_locality_typeNull() {
+                return this.IsNull(this.tableStreet.Id_locality_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetId_locality_typeNull() {
+                this[this.tableStreet.Id_locality_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLocality_type_nameNull() {
+                return this.IsNull(this.tableStreet.Locality_type_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLocality_type_nameNull() {
+                this[this.tableStreet.Locality_type_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11973,6 +12477,7 @@ namespace Route.MilkWorkDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Id_area", "Id_area");
             tableMapping.ColumnMappings.Add("Area_name", "Area_name");
             tableMapping.ColumnMappings.Add("Id_region", "Id_region");
+            tableMapping.ColumnMappings.Add("Region_name", "Region_name");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -12016,12 +12521,15 @@ SELECT Id_area, Area_name, Id_region FROM Area WHERE (Id_area = @Id_area)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id_area, Area_name, Id_region FROM dbo.Area";
+            this._commandCollection[0].CommandText = "SELECT        Area.Id_area, Area.Area_name, Area.Id_region, Region.Region_name\r\nF" +
+                "ROM            Area INNER JOIN\r\n                         Region ON Area.Id_regio" +
+                "n = Region.Id_region";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        Id_area, Area_name, Id_region\nFROM            Area\nWHERE        (Id" +
-                "_region = @Id_region)";
+            this._commandCollection[1].CommandText = "SELECT        Area.Id_area, Area.Area_name, Area.Id_region, Region.Region_name\r\nF" +
+                "ROM            Area INNER JOIN\r\n                         Region ON Area.Id_regio" +
+                "n = Region.Id_region\r\nWHERE        (Area.Id_region = @Id_region)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_region", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id_region", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -13038,6 +13546,11 @@ SELECT Id_car, Id_car_type, Id_model, Car_number FROM Car WHERE (Id_car = @Id_ca
             tableMapping.ColumnMappings.Add("Locality_name", "Locality_name");
             tableMapping.ColumnMappings.Add("Id_area", "Id_area");
             tableMapping.ColumnMappings.Add("Id_locality_type", "Id_locality_type");
+            tableMapping.ColumnMappings.Add("Area_name", "Area_name");
+            tableMapping.ColumnMappings.Add("Id_region", "Id_region");
+            tableMapping.ColumnMappings.Add("Region_name", "Region_name");
+            tableMapping.ColumnMappings.Add("Locality_type_name", "Locality_type_name");
+            tableMapping.ColumnMappings.Add("Address", "Address");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -13084,11 +13597,27 @@ SELECT Id_locality, Locality_name, Id_area, Id_locality_type FROM Locality WHERE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id_locality, Locality_name, Id_area, Id_locality_type FROM dbo.Locality";
+            this._commandCollection[0].CommandText = @"SELECT        Locality.Id_locality, Locality.Locality_name, Locality.Id_area, Locality.Id_locality_type, Area.Area_name, Area.Id_region, Region.Region_name, Locality_type.Locality_type_name, 
+                         Locality.Locality_name + N' ' + Locality_type.Locality_type_name AS Address
+FROM            Locality INNER JOIN
+                         Area ON Locality.Id_area = Area.Id_area INNER JOIN
+                         Region ON Area.Id_region = Region.Id_region INNER JOIN
+                         Locality_type ON Locality.Id_locality_type = Locality_type.Id_locality_type";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        Locality.Id_locality, Locality.Locality_name, Locality.Id_area, Locality.Id_locality_type, Area.Area_name, Area.Id_region, Region.Region_name, Locality_type.Locality_type_name, 
+                         Locality.Locality_name + N' ' + Locality_type.Locality_type_name AS Address
+FROM            Locality INNER JOIN
+                         Area ON Locality.Id_area = Area.Id_area INNER JOIN
+                         Region ON Area.Id_region = Region.Id_region INNER JOIN
+                         Locality_type ON Locality.Id_locality_type = Locality_type.Id_locality_type
+WHERE        (Locality.Id_area = @Id_area)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_area", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id_area", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13110,6 +13639,32 @@ SELECT Id_locality, Locality_name, Id_area, Id_locality_type FROM Locality WHERE
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual MilkWorkDataSet.LocalityDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            MilkWorkDataSet.LocalityDataTable dataTable = new MilkWorkDataSet.LocalityDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByArea(MilkWorkDataSet.LocalityDataTable dataTable, int Id_area) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id_area));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual MilkWorkDataSet.LocalityDataTable GetDataByArea(int Id_area) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id_area));
             MilkWorkDataSet.LocalityDataTable dataTable = new MilkWorkDataSet.LocalityDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -16664,6 +17219,13 @@ SELECT Id_shop_request, Date_of_request, Id_shop FROM Shop_request WHERE (Id_sho
             tableMapping.ColumnMappings.Add("Id_street", "Id_street");
             tableMapping.ColumnMappings.Add("Street_name", "Street_name");
             tableMapping.ColumnMappings.Add("Id_locality", "Id_locality");
+            tableMapping.ColumnMappings.Add("Id_area", "Id_area");
+            tableMapping.ColumnMappings.Add("Area_name", "Area_name");
+            tableMapping.ColumnMappings.Add("Id_region", "Id_region");
+            tableMapping.ColumnMappings.Add("Region_name", "Region_name");
+            tableMapping.ColumnMappings.Add("Locality_name", "Locality_name");
+            tableMapping.ColumnMappings.Add("Id_locality_type", "Id_locality_type");
+            tableMapping.ColumnMappings.Add("Locality_type_name", "Locality_type_name");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -16707,7 +17269,12 @@ SELECT Id_street, Street_name, Id_locality FROM Street WHERE (Id_street = @Id_st
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id_street, Street_name, Id_locality FROM dbo.Street";
+            this._commandCollection[0].CommandText = @"SELECT        Street.Id_street, Street.Street_name, Street.Id_locality, Area.Id_area, Area.Area_name, Region.Id_region, Region.Region_name, Locality.Locality_name, Locality_type.Id_locality_type, Locality_type.Locality_type_name
+FROM            Street INNER JOIN
+                         Locality ON Street.Id_locality = Locality.Id_locality INNER JOIN
+                         Area ON Locality.Id_area = Area.Id_area INNER JOIN
+                         Locality_type ON Locality.Id_locality_type = Locality_type.Id_locality_type INNER JOIN
+                         Region ON Area.Id_region = Region.Id_region";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
