@@ -66,7 +66,7 @@ namespace Route
         {
             AddingHandler.Handle(this, () =>
             {
-                if (ShopLocation is null)
+                if (ShopLocation == null)
                 {
                     MessageBox.Show(this, "Необходимо указать месторасположение магазина", "Ошибка", MessageBoxButtons.OK);
                     return;
