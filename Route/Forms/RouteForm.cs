@@ -34,11 +34,26 @@ namespace Route
             });
 
             bingRouteDataProvider1.LayerItemsGenerating += BingRouteDataProvider1_LayerItemsGenerating;
+            bingRouteDataProvider1.RouteCalculated += BingRouteDataProvider1_RouteCalculated;
+        }
+
+        private void BingRouteDataProvider1_RouteCalculated(object sender, BingRouteCalculatedEventArgs e)
+        {
+            if (routeBindingSource.Current == null || routeBindingSource.Count == 0)
+                return;
+
+            if (e.CalculationResult.RouteResults.Count > 0)
+            {
+                (routeBindingSource.Current as DataRowView)["Route_distance"] = e.CalculationResult.RouteResults[0].Distance;
+                routeBindingSource.EndEdit();
+                routeTableAdapter.Update(milkWorkDataSet.Route);
+            }
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
             routeBindingSource.AddNew();
+            (routeBindingSource.Current as DataRowView)["Route_distance"] = 0;
             routeGroupBox.Enabled = true;
             routeStructGroupBox.Enabled = false;
         }
@@ -121,9 +136,11 @@ namespace Route
                 return;
 
             int id_route = (int)(routeBindingSource.Current as DataRowView)["id_route"];
-            route_structViewTableAdapter.InsertQuery(1, (int)shopComboBox.SelectedValue, id_route);
+            int number = routestructViewBindingSource.Count;
+            route_structViewTableAdapter.InsertQuery(number + 1, (int)shopComboBox.SelectedValue, id_route);
             FillRouteStruct(id_route);
             BuildRoute();
+            UpdateDistance();
         }
 
         private void FillRouteStruct(int id_route)
@@ -139,6 +156,7 @@ namespace Route
         private void BuildRoute()
         {
             informationLayer1.Data.Items.Clear();
+            mapControl1.Refresh();
 
             List<RouteWaypoint> waypoints = new List<RouteWaypoint>();
 
@@ -156,9 +174,24 @@ namespace Route
         {
             if (routestructViewBindingSource.Count != 0)
             {
+                int id_route = (int)(routeBindingSource.Current as DataRowView)["Id_route"];
+                int id_route_struct = (int)(routestructViewBindingSource.Current as DataRowView)["Id_route_struct"];
                 routestructViewBindingSource.RemoveCurrent();
                 route_structViewTableAdapter.Update(milkWorkDataSet.Route_structView);
+                route_structViewTableAdapter.UpdateAfterDelete(id_route_struct, id_route);
+                route_structViewTableAdapter.FillByRoute(milkWorkDataSet.Route_structView, id_route);
                 BuildRoute();
+            }
+            UpdateDistance();
+        }
+
+        private void UpdateDistance()
+        {
+            if (routestructViewBindingSource.Count < 2)
+            {
+                (routeBindingSource.Current as DataRowView)["Route_distance"] = 0;
+                routeBindingSource.EndEdit();
+                routeTableAdapter.Update(milkWorkDataSet.Route);
             }
         }
     }

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label route_nameLabel;
             System.Windows.Forms.Label route_dateLabel;
-            System.Windows.Forms.Label route_distanceLabel;
             System.Windows.Forms.Label carLabel;
             System.Windows.Forms.Label label1;
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -50,7 +49,6 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.route_nameTextBox = new System.Windows.Forms.TextBox();
             this.route_dateDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.route_distanceTextBox = new System.Windows.Forms.TextBox();
             this.mapControl1 = new DevExpress.XtraMap.MapControl();
             this.imageLayer1 = new DevExpress.XtraMap.ImageLayer();
             this.bingMapDataProvider1 = new DevExpress.XtraMap.BingMapDataProvider();
@@ -74,7 +72,6 @@
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             route_nameLabel = new System.Windows.Forms.Label();
             route_dateLabel = new System.Windows.Forms.Label();
-            route_distanceLabel = new System.Windows.Forms.Label();
             carLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -107,19 +104,10 @@
             route_dateLabel.TabIndex = 2;
             route_dateLabel.Text = "Дата:";
             // 
-            // route_distanceLabel
-            // 
-            route_distanceLabel.AutoSize = true;
-            route_distanceLabel.Location = new System.Drawing.Point(6, 94);
-            route_distanceLabel.Name = "route_distanceLabel";
-            route_distanceLabel.Size = new System.Drawing.Size(70, 13);
-            route_distanceLabel.TabIndex = 4;
-            route_distanceLabel.Text = "Расстояние:";
-            // 
             // carLabel
             // 
             carLabel.AutoSize = true;
-            carLabel.Location = new System.Drawing.Point(6, 133);
+            carLabel.Location = new System.Drawing.Point(6, 98);
             carLabel.Name = "carLabel";
             carLabel.Size = new System.Drawing.Size(72, 13);
             carLabel.TabIndex = 10;
@@ -229,8 +217,6 @@
             this.routeGroupBox.Controls.Add(this.route_nameTextBox);
             this.routeGroupBox.Controls.Add(route_dateLabel);
             this.routeGroupBox.Controls.Add(this.route_dateDateTimePicker);
-            this.routeGroupBox.Controls.Add(route_distanceLabel);
-            this.routeGroupBox.Controls.Add(this.route_distanceTextBox);
             this.routeGroupBox.Enabled = false;
             this.routeGroupBox.Location = new System.Drawing.Point(12, 261);
             this.routeGroupBox.Name = "routeGroupBox";
@@ -245,7 +231,7 @@
             this.carComboBox.DataSource = this.carViewBindingSource;
             this.carComboBox.DisplayMember = "Full_car_name";
             this.carComboBox.FormattingEnabled = true;
-            this.carComboBox.Location = new System.Drawing.Point(6, 149);
+            this.carComboBox.Location = new System.Drawing.Point(6, 114);
             this.carComboBox.Name = "carComboBox";
             this.carComboBox.Size = new System.Drawing.Size(200, 21);
             this.carComboBox.TabIndex = 9;
@@ -258,7 +244,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(113, 182);
+            this.cancelButton.Location = new System.Drawing.Point(105, 141);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(93, 23);
             this.cancelButton.TabIndex = 8;
@@ -268,7 +254,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(6, 182);
+            this.saveButton.Location = new System.Drawing.Point(6, 141);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(93, 23);
             this.saveButton.TabIndex = 7;
@@ -292,14 +278,6 @@
             this.route_dateDateTimePicker.Name = "route_dateDateTimePicker";
             this.route_dateDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.route_dateDateTimePicker.TabIndex = 3;
-            // 
-            // route_distanceTextBox
-            // 
-            this.route_distanceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.routeBindingSource, "Route_distance", true));
-            this.route_distanceTextBox.Location = new System.Drawing.Point(6, 110);
-            this.route_distanceTextBox.Name = "route_distanceTextBox";
-            this.route_distanceTextBox.Size = new System.Drawing.Size(200, 20);
-            this.route_distanceTextBox.TabIndex = 5;
             // 
             // mapControl1
             // 
@@ -346,10 +324,12 @@
             this.tableAdapterManager.ProductViewTableAdapter = null;
             this.tableAdapterManager.RegionTableAdapter = null;
             this.tableAdapterManager.Request_structTableAdapter = null;
+            this.tableAdapterManager.RequestStructViewTableAdapter = null;
             this.tableAdapterManager.Route_structTableAdapter = null;
             this.tableAdapterManager.Route_structViewTableAdapter = null;
             this.tableAdapterManager.RouteTableAdapter = this.routeTableAdapter;
             this.tableAdapterManager.Shop_requestTableAdapter = null;
+            this.tableAdapterManager.ShopRequestViewTableAdapter = null;
             this.tableAdapterManager.ShopTableAdapter = null;
             this.tableAdapterManager.ShopViewTableAdapter = null;
             this.tableAdapterManager.StreetTableAdapter = null;
@@ -514,7 +494,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn routedistanceDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox route_nameTextBox;
         private System.Windows.Forms.DateTimePicker route_dateDateTimePicker;
-        private System.Windows.Forms.TextBox route_distanceTextBox;
         private MilkWorkDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingSource routestructViewBindingSource;
         private MilkWorkDataSetTableAdapters.Route_structViewTableAdapter route_structViewTableAdapter;
