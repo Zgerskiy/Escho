@@ -74,14 +74,14 @@ namespace Route.Forms
             if (streetBindingSource.Current == null || streetBindingSource.Count == 0)            
                 return;  
 
-            int? idRegion = (int?)(streetBindingSource.Current as DataRowView)["Id_region"];
-            if (idRegion.HasValue)
+            int? idRegion = (streetBindingSource.Current as DataRowView)["Id_region"] as int?;
+            if (idRegion != null)
             {
                 areaTableAdapter.FillByRegion(milkWorkDataSet.Area, idRegion.Value);
             }
 
-            int? idArea = (int?)(streetBindingSource.Current as DataRowView)["Id_area"];
-            if (idArea.HasValue)
+            int? idArea = (streetBindingSource.Current as DataRowView)["Id_area"] as int?;
+            if (idArea != null)
             {
                 localityTableAdapter.FillByArea(milkWorkDataSet.Locality, idArea.Value);
             }           
@@ -89,9 +89,9 @@ namespace Route.Forms
 
         private void region_nameComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            var idRegion = (int?)region_nameComboBox.SelectedValue;
+            var idRegion = region_nameComboBox.SelectedValue as int?;
 
-            if (idRegion.HasValue)
+            if (idRegion != null)
             {
                 areaTableAdapter.FillByRegion(milkWorkDataSet.Area, idRegion.Value);
 
@@ -104,9 +104,9 @@ namespace Route.Forms
 
         private void area_nameComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            var idArea = (int?)area_nameComboBox.SelectedValue;
+            var idArea = area_nameComboBox.SelectedValue as int?;
 
-            if (idArea.HasValue)
+            if (idArea != null)
             {
                 localityTableAdapter.FillByArea(milkWorkDataSet.Locality, idArea.Value);
 

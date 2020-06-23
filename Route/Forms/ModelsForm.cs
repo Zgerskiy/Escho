@@ -57,6 +57,7 @@ namespace Route.Forms
             {
                 modelBindingSource.EndEdit();
                 modelTableAdapter.Update(milkWorkDataSet.Model);
+                modelTableAdapter.Fill(milkWorkDataSet.Model);
                 modelGroupBox.Enabled = false;
             });
         }

@@ -31,24 +31,33 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label region_nameLabel;
             this.regionGroupBox = new System.Windows.Forms.GroupBox();
+            this.region_nameTextBox = new System.Windows.Forms.TextBox();
+            this.regionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.milkWorkDataSet = new Route.MilkWorkDataSet();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.regionsDataGridView = new System.Windows.Forms.DataGridView();
-            this.addButton = new System.Windows.Forms.Button();
-            this.milkWorkDataSet = new Route.MilkWorkDataSet();
-            this.regionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.regionTableAdapter = new Route.MilkWorkDataSetTableAdapters.RegionTableAdapter();
             this.regionnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addButton = new System.Windows.Forms.Button();
+            this.regionTableAdapter = new Route.MilkWorkDataSetTableAdapters.RegionTableAdapter();
             this.tableAdapterManager = new Route.MilkWorkDataSetTableAdapters.TableAdapterManager();
-            this.region_nameTextBox = new System.Windows.Forms.TextBox();
             region_nameLabel = new System.Windows.Forms.Label();
             this.regionGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.regionsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.regionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.regionsDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // region_nameLabel
+            // 
+            region_nameLabel.AutoSize = true;
+            region_nameLabel.Location = new System.Drawing.Point(8, 16);
+            region_nameLabel.Name = "region_nameLabel";
+            region_nameLabel.Size = new System.Drawing.Size(41, 13);
+            region_nameLabel.TabIndex = 5;
+            region_nameLabel.Text = "Район:";
             // 
             // regionGroupBox
             // 
@@ -59,12 +68,33 @@
             this.regionGroupBox.Controls.Add(this.region_nameTextBox);
             this.regionGroupBox.Controls.Add(this.cancelButton);
             this.regionGroupBox.Controls.Add(this.saveButton);
+            this.regionGroupBox.Enabled = false;
             this.regionGroupBox.Location = new System.Drawing.Point(12, 285);
             this.regionGroupBox.Name = "regionGroupBox";
             this.regionGroupBox.Size = new System.Drawing.Size(308, 101);
             this.regionGroupBox.TabIndex = 14;
             this.regionGroupBox.TabStop = false;
             this.regionGroupBox.Text = "Информация о районе";
+            // 
+            // region_nameTextBox
+            // 
+            this.region_nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.region_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.regionBindingSource, "Region_name", true));
+            this.region_nameTextBox.Location = new System.Drawing.Point(11, 32);
+            this.region_nameTextBox.Name = "region_nameTextBox";
+            this.region_nameTextBox.Size = new System.Drawing.Size(291, 20);
+            this.region_nameTextBox.TabIndex = 6;
+            // 
+            // regionBindingSource
+            // 
+            this.regionBindingSource.DataMember = "Region";
+            this.regionBindingSource.DataSource = this.milkWorkDataSet;
+            // 
+            // milkWorkDataSet
+            // 
+            this.milkWorkDataSet.DataSetName = "MilkWorkDataSet";
+            this.milkWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cancelButton
             // 
@@ -126,6 +156,13 @@
             this.regionsDataGridView.Size = new System.Drawing.Size(308, 239);
             this.regionsDataGridView.TabIndex = 11;
             // 
+            // regionnameDataGridViewTextBoxColumn
+            // 
+            this.regionnameDataGridViewTextBoxColumn.DataPropertyName = "Region_name";
+            this.regionnameDataGridViewTextBoxColumn.HeaderText = "Область";
+            this.regionnameDataGridViewTextBoxColumn.Name = "regionnameDataGridViewTextBoxColumn";
+            this.regionnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // addButton
             // 
             this.addButton.Location = new System.Drawing.Point(12, 11);
@@ -136,26 +173,9 @@
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // milkWorkDataSet
-            // 
-            this.milkWorkDataSet.DataSetName = "MilkWorkDataSet";
-            this.milkWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // regionBindingSource
-            // 
-            this.regionBindingSource.DataMember = "Region";
-            this.regionBindingSource.DataSource = this.milkWorkDataSet;
-            // 
             // regionTableAdapter
             // 
             this.regionTableAdapter.ClearBeforeFill = true;
-            // 
-            // regionnameDataGridViewTextBoxColumn
-            // 
-            this.regionnameDataGridViewTextBoxColumn.DataPropertyName = "Region_name";
-            this.regionnameDataGridViewTextBoxColumn.HeaderText = "Область";
-            this.regionnameDataGridViewTextBoxColumn.Name = "regionnameDataGridViewTextBoxColumn";
-            this.regionnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tableAdapterManager
             // 
@@ -185,25 +205,6 @@
             this.tableAdapterManager.UnitTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Route.MilkWorkDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // region_nameLabel
-            // 
-            region_nameLabel.AutoSize = true;
-            region_nameLabel.Location = new System.Drawing.Point(8, 16);
-            region_nameLabel.Name = "region_nameLabel";
-            region_nameLabel.Size = new System.Drawing.Size(41, 13);
-            region_nameLabel.TabIndex = 5;
-            region_nameLabel.Text = "Район:";
-            // 
-            // region_nameTextBox
-            // 
-            this.region_nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.region_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.regionBindingSource, "Region_name", true));
-            this.region_nameTextBox.Location = new System.Drawing.Point(11, 32);
-            this.region_nameTextBox.Name = "region_nameTextBox";
-            this.region_nameTextBox.Size = new System.Drawing.Size(291, 20);
-            this.region_nameTextBox.TabIndex = 6;
-            // 
             // RegionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,9 +220,9 @@
             this.Load += new System.EventHandler(this.RegionForm_Load);
             this.regionGroupBox.ResumeLayout(false);
             this.regionGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.regionsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.regionsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }

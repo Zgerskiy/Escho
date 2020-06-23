@@ -15,8 +15,9 @@ namespace Route.Helpers
             {
                 action?.Invoke();
             }
-            catch
+            catch(Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 MessageBox.Show(window, "Проверьте введенные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

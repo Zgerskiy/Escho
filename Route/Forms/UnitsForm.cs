@@ -59,7 +59,7 @@ namespace Route.Forms
             AddingHandler.Handle(this, () =>
             {
                 unitBindingSource.EndEdit();
-                unitTableAdapter.Fill(milkWorkDataSet.Unit);
+                unitTableAdapter.Update(milkWorkDataSet.Unit);
                 unitGroupBox.Enabled = false;
             });
         }

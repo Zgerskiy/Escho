@@ -2354,12 +2354,8 @@ namespace Route {
                 this.columnLocality_name.AllowDBNull = false;
                 this.columnLocality_name.MaxLength = 200;
                 this.columnId_area.AllowDBNull = false;
-                this.columnArea_name.AllowDBNull = false;
                 this.columnArea_name.MaxLength = 200;
-                this.columnId_region.AllowDBNull = false;
-                this.columnRegion_name.AllowDBNull = false;
                 this.columnRegion_name.MaxLength = 200;
-                this.columnLocality_type_name.AllowDBNull = false;
                 this.columnLocality_type_name.MaxLength = 200;
                 this.columnAddress.ReadOnly = true;
                 this.columnAddress.MaxLength = 401;
@@ -8085,7 +8081,6 @@ namespace Route {
                 this.columnModel_name.AllowDBNull = false;
                 this.columnModel_name.MaxLength = 200;
                 this.columnId_mark.AllowDBNull = false;
-                this.columnMark_name.AllowDBNull = false;
                 this.columnMark_name.MaxLength = 200;
             }
             
@@ -9208,7 +9203,12 @@ namespace Route {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Area_name {
                 get {
-                    return ((string)(this[this.tableLocality.Area_nameColumn]));
+                    try {
+                        return ((string)(this[this.tableLocality.Area_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Area_name\' в таблице \'Locality\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableLocality.Area_nameColumn] = value;
@@ -9219,7 +9219,12 @@ namespace Route {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int Id_region {
                 get {
-                    return ((int)(this[this.tableLocality.Id_regionColumn]));
+                    try {
+                        return ((int)(this[this.tableLocality.Id_regionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Id_region\' в таблице \'Locality\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableLocality.Id_regionColumn] = value;
@@ -9230,7 +9235,12 @@ namespace Route {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Region_name {
                 get {
-                    return ((string)(this[this.tableLocality.Region_nameColumn]));
+                    try {
+                        return ((string)(this[this.tableLocality.Region_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Region_name\' в таблице \'Locality\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableLocality.Region_nameColumn] = value;
@@ -9241,7 +9251,12 @@ namespace Route {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Locality_type_name {
                 get {
-                    return ((string)(this[this.tableLocality.Locality_type_nameColumn]));
+                    try {
+                        return ((string)(this[this.tableLocality.Locality_type_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Locality_type_name\' в таблице \'Locality\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableLocality.Locality_type_nameColumn] = value;
@@ -9296,6 +9311,54 @@ namespace Route {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetId_locality_typeNull() {
                 this[this.tableLocality.Id_locality_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsArea_nameNull() {
+                return this.IsNull(this.tableLocality.Area_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetArea_nameNull() {
+                this[this.tableLocality.Area_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsId_regionNull() {
+                return this.IsNull(this.tableLocality.Id_regionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetId_regionNull() {
+                this[this.tableLocality.Id_regionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsRegion_nameNull() {
+                return this.IsNull(this.tableLocality.Region_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetRegion_nameNull() {
+                this[this.tableLocality.Region_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLocality_type_nameNull() {
+                return this.IsNull(this.tableLocality.Locality_type_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLocality_type_nameNull() {
+                this[this.tableLocality.Locality_type_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11220,7 +11283,12 @@ namespace Route {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Mark_name {
                 get {
-                    return ((string)(this[this.tableModel.Mark_nameColumn]));
+                    try {
+                        return ((string)(this[this.tableModel.Mark_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Mark_name\' в таблице \'Model\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableModel.Mark_nameColumn] = value;
@@ -11236,6 +11304,18 @@ namespace Route {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__Model__Id_mark__4F47C5E3"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsMark_nameNull() {
+                return this.IsNull(this.tableModel.Mark_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetMark_nameNull() {
+                this[this.tableModel.Mark_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

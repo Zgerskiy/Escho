@@ -1488,22 +1488,22 @@ WHERE        (Id_shop_request = @Id_shop_request)</CommandText>
               </xs:element>
               <xs:element name="Id_area" msprop:Generator_ColumnVarNameInTable="columnId_area" msprop:Generator_ColumnPropNameInRow="Id_area" msprop:Generator_ColumnPropNameInTable="Id_areaColumn" msprop:Generator_UserColumnName="Id_area" type="xs:int" />
               <xs:element name="Id_locality_type" msprop:Generator_ColumnVarNameInTable="columnId_locality_type" msprop:Generator_ColumnPropNameInRow="Id_locality_type" msprop:Generator_ColumnPropNameInTable="Id_locality_typeColumn" msprop:Generator_UserColumnName="Id_locality_type" type="xs:int" minOccurs="0" />
-              <xs:element name="Area_name" msprop:Generator_ColumnVarNameInTable="columnArea_name" msprop:Generator_ColumnPropNameInRow="Area_name" msprop:Generator_ColumnPropNameInTable="Area_nameColumn" msprop:Generator_UserColumnName="Area_name">
+              <xs:element name="Area_name" msprop:Generator_ColumnVarNameInTable="columnArea_name" msprop:Generator_ColumnPropNameInRow="Area_name" msprop:Generator_ColumnPropNameInTable="Area_nameColumn" msprop:Generator_UserColumnName="Area_name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Id_region" msprop:Generator_ColumnVarNameInTable="columnId_region" msprop:Generator_ColumnPropNameInRow="Id_region" msprop:Generator_ColumnPropNameInTable="Id_regionColumn" msprop:Generator_UserColumnName="Id_region" type="xs:int" />
-              <xs:element name="Region_name" msprop:Generator_ColumnVarNameInTable="columnRegion_name" msprop:Generator_ColumnPropNameInRow="Region_name" msprop:Generator_ColumnPropNameInTable="Region_nameColumn" msprop:Generator_UserColumnName="Region_name">
+              <xs:element name="Id_region" msprop:Generator_ColumnVarNameInTable="columnId_region" msprop:Generator_ColumnPropNameInRow="Id_region" msprop:Generator_ColumnPropNameInTable="Id_regionColumn" msprop:Generator_UserColumnName="Id_region" type="xs:int" minOccurs="0" />
+              <xs:element name="Region_name" msprop:Generator_ColumnVarNameInTable="columnRegion_name" msprop:Generator_ColumnPropNameInRow="Region_name" msprop:Generator_ColumnPropNameInTable="Region_nameColumn" msprop:Generator_UserColumnName="Region_name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Locality_type_name" msprop:Generator_ColumnVarNameInTable="columnLocality_type_name" msprop:Generator_ColumnPropNameInRow="Locality_type_name" msprop:Generator_ColumnPropNameInTable="Locality_type_nameColumn" msprop:Generator_UserColumnName="Locality_type_name">
+              <xs:element name="Locality_type_name" msprop:Generator_ColumnVarNameInTable="columnLocality_type_name" msprop:Generator_ColumnPropNameInRow="Locality_type_name" msprop:Generator_ColumnPropNameInTable="Locality_type_nameColumn" msprop:Generator_UserColumnName="Locality_type_name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
@@ -1871,7 +1871,7 @@ WHERE        (Id_shop_request = @Id_shop_request)</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Id_mark" msprop:Generator_ColumnVarNameInTable="columnId_mark" msprop:Generator_ColumnPropNameInRow="Id_mark" msprop:Generator_ColumnPropNameInTable="Id_markColumn" msprop:Generator_UserColumnName="Id_mark" type="xs:int" />
-              <xs:element name="Mark_name" msprop:Generator_ColumnVarNameInTable="columnMark_name" msprop:Generator_ColumnPropNameInRow="Mark_name" msprop:Generator_ColumnPropNameInTable="Mark_nameColumn" msprop:Generator_UserColumnName="Mark_name">
+              <xs:element name="Mark_name" msprop:Generator_ColumnVarNameInTable="columnMark_name" msprop:Generator_ColumnPropNameInRow="Mark_name" msprop:Generator_ColumnPropNameInTable="Mark_nameColumn" msprop:Generator_UserColumnName="Mark_name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />

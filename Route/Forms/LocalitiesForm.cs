@@ -45,7 +45,7 @@ namespace Route.Forms
             if (localityBindingSource.Count == 0 || localityBindingSource.Current == null)
                 return;
 
-            int? idRegion = (int?)(localityBindingSource.Current as DataRowView)["Id_region"];
+            int? idRegion = (localityBindingSource.Current as DataRowView)["Id_region"] as int?;
             if (idRegion != null)
             {
                 areaTableAdapter.FillByRegion(milkWorkDataSet.Area, idRegion.Value);

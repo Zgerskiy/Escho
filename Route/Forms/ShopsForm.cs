@@ -27,8 +27,7 @@ namespace Route
         {
             ConnectionHandler.HandleConnection(this, () =>
             {
-                this.shopViewTableAdapter.Fill(this.milkWorkDataSet.ShopView); 
-               
+                this.shopViewTableAdapter.Fill(this.milkWorkDataSet.ShopView);                
                 this.regionTableAdapter.Fill(this.milkWorkDataSet.Region);
             });
            
@@ -122,16 +121,16 @@ namespace Route
 
         private void shopsDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            if (shopViewBindingSource.Count == 0)
+            if (shopViewBindingSource.Count == 0 || shopViewBindingSource.Current == null)
                 return;
 
             ClearPushPins();
             ShopLocation = null;
 
-            double? x = (double?)(shopViewBindingSource.Current as DataRowView)["Shop_x_coord"];
-            double? y = (double?)(shopViewBindingSource.Current as DataRowView)["Shop_y_coord"];
+            double? x = (shopViewBindingSource.Current as DataRowView)["Shop_x_coord"] as double?;
+            double? y = (shopViewBindingSource.Current as DataRowView)["Shop_y_coord"] as double?;
 
-            if (x.HasValue && y.HasValue)
+            if (x != null && y != null)
             {
                 ShopLocation = new GeoPoint(y.Value, x.Value);
                 mapItemStorage1.Items.Add(new MapPushpin() { Location = ShopLocation, Text = "Здесь", ToolTipPattern = "Месторасположение магазина" });
@@ -139,20 +138,20 @@ namespace Route
                 mapControl1.CenterPoint = ShopLocation;
             }
 
-            int? idRegion = (int?)(shopViewBindingSource.Current as DataRowView)["Id_region"];
-            if (idRegion.HasValue)
+            int? idRegion = (shopViewBindingSource.Current as DataRowView)["Id_region"] as int?;
+            if (idRegion != null)
             {
                 areaTableAdapter.FillByRegion(milkWorkDataSet.Area, idRegion.Value);
             }
 
-            int? idArea = (int?)(shopViewBindingSource.Current as DataRowView)["Id_area"];
-            if(idArea.HasValue)
+            int? idArea = (int?)(shopViewBindingSource.Current as DataRowView)["Id_area"] as int?;
+            if(idArea != null)
             {
                 localityViewTableAdapter.FillByArea(milkWorkDataSet.LocalityView, idArea.Value);
             }
 
-            int? idLocality = (int?)(shopViewBindingSource.Current as DataRowView)["Id_locality"];
-            if(idLocality.HasValue)
+            int? idLocality = (shopViewBindingSource.Current as DataRowView)["Id_locality"] as int?;
+            if(idLocality != null)
             {
                 streetTableAdapter.FillByLocality(milkWorkDataSet.Street, idLocality.Value);
             }
@@ -177,10 +176,10 @@ namespace Route
 
         private void areaComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            var idArea = (int?)areaComboBox.SelectedValue;
+            var idArea = areaComboBox.SelectedValue as int?;
 
-            if (idArea.HasValue)
-            {
+            if (idArea !=null)
+            { 
                 localityViewTableAdapter.FillByArea(milkWorkDataSet.LocalityView, idArea.Value);
 
                 LocalityComboBox.SelectedIndex = -1;
@@ -192,9 +191,9 @@ namespace Route
 
         private void LocalityComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            var idLocality = (int?)LocalityComboBox.SelectedValue;
+            var idLocality = LocalityComboBox.SelectedValue as int?;
 
-            if (idLocality.HasValue)
+            if (idLocality != null)
             {
                 streetTableAdapter.FillByLocality(milkWorkDataSet.Street, idLocality.Value);
                

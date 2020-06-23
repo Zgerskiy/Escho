@@ -73,9 +73,9 @@ namespace Route.Forms
             if (shopRequestViewBindingSource.Count == 0 || shopRequestViewBindingSource.Current == null)
                 return;
 
-            int? idShopRequest = (int?)(shopRequestViewBindingSource.Current as DataRowView)["Id_shop_request"];
+            int? idShopRequest = (shopRequestViewBindingSource.Current as DataRowView)["Id_shop_request"] as int?;
 
-            if (idShopRequest.HasValue)
+            if (idShopRequest != null)
             {
                 requestStructViewTableAdapter.FillByShopRequest(milkWorkDataSet.RequestStructView, idShopRequest.Value);
             }
