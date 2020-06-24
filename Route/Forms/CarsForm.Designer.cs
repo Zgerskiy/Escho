@@ -242,6 +242,7 @@
             // 
             this.car_numberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carViewBindingSource, "Car_number", true));
             this.car_numberTextBox.Location = new System.Drawing.Point(14, 32);
+            this.car_numberTextBox.MaxLength = 8;
             this.car_numberTextBox.Name = "car_numberTextBox";
             this.car_numberTextBox.Size = new System.Drawing.Size(239, 20);
             this.car_numberTextBox.TabIndex = 1;
