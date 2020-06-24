@@ -31,29 +31,37 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label product_type_nameLabel;
             this.prodTypeGroupBox = new System.Windows.Forms.GroupBox();
+            this.product_type_nameTextBox = new System.Windows.Forms.TextBox();
+            this.producttypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.milkWorkDataSet = new Route.MilkWorkDataSet();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.prodTypesDataGridView = new System.Windows.Forms.DataGridView();
-            this.addButton = new System.Windows.Forms.Button();
-            this.milkWorkDataSet = new Route.MilkWorkDataSet();
-            this.producttypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.product_typeTableAdapter = new Route.MilkWorkDataSetTableAdapters.Product_typeTableAdapter();
             this.producttypenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addButton = new System.Windows.Forms.Button();
+            this.product_typeTableAdapter = new Route.MilkWorkDataSetTableAdapters.Product_typeTableAdapter();
             this.tableAdapterManager = new Route.MilkWorkDataSetTableAdapters.TableAdapterManager();
-            this.product_type_nameTextBox = new System.Windows.Forms.TextBox();
             product_type_nameLabel = new System.Windows.Forms.Label();
             this.prodTypeGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.prodTypesDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.producttypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prodTypesDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // product_type_nameLabel
+            // 
+            product_type_nameLabel.AutoSize = true;
+            product_type_nameLabel.Location = new System.Drawing.Point(6, 16);
+            product_type_nameLabel.Name = "product_type_nameLabel";
+            product_type_nameLabel.Size = new System.Drawing.Size(78, 13);
+            product_type_nameLabel.TabIndex = 5;
+            product_type_nameLabel.Text = "Тип продукта:";
             // 
             // prodTypeGroupBox
             // 
-            this.prodTypeGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.prodTypeGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.prodTypeGroupBox.Controls.Add(product_type_nameLabel);
             this.prodTypeGroupBox.Controls.Add(this.product_type_nameTextBox);
@@ -61,11 +69,33 @@
             this.prodTypeGroupBox.Controls.Add(this.saveButton);
             this.prodTypeGroupBox.Enabled = false;
             this.prodTypeGroupBox.Location = new System.Drawing.Point(12, 281);
+            this.prodTypeGroupBox.MaximumSize = new System.Drawing.Size(270, 88);
+            this.prodTypeGroupBox.MinimumSize = new System.Drawing.Size(270, 88);
             this.prodTypeGroupBox.Name = "prodTypeGroupBox";
-            this.prodTypeGroupBox.Size = new System.Drawing.Size(270, 86);
+            this.prodTypeGroupBox.Size = new System.Drawing.Size(270, 88);
             this.prodTypeGroupBox.TabIndex = 14;
             this.prodTypeGroupBox.TabStop = false;
             this.prodTypeGroupBox.Text = "Информация о типе продукта";
+            // 
+            // product_type_nameTextBox
+            // 
+            this.product_type_nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.product_type_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.producttypeBindingSource, "Product_type_name", true));
+            this.product_type_nameTextBox.Location = new System.Drawing.Point(6, 32);
+            this.product_type_nameTextBox.Name = "product_type_nameTextBox";
+            this.product_type_nameTextBox.Size = new System.Drawing.Size(258, 20);
+            this.product_type_nameTextBox.TabIndex = 6;
+            // 
+            // producttypeBindingSource
+            // 
+            this.producttypeBindingSource.DataMember = "Product_type";
+            this.producttypeBindingSource.DataSource = this.milkWorkDataSet;
+            // 
+            // milkWorkDataSet
+            // 
+            this.milkWorkDataSet.DataSetName = "MilkWorkDataSet";
+            this.milkWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cancelButton
             // 
@@ -111,7 +141,8 @@
             // 
             this.prodTypesDataGridView.AllowUserToAddRows = false;
             this.prodTypesDataGridView.AllowUserToDeleteRows = false;
-            this.prodTypesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.prodTypesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.prodTypesDataGridView.AutoGenerateColumns = false;
             this.prodTypesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -127,6 +158,13 @@
             this.prodTypesDataGridView.Size = new System.Drawing.Size(270, 239);
             this.prodTypesDataGridView.TabIndex = 11;
             // 
+            // producttypenameDataGridViewTextBoxColumn
+            // 
+            this.producttypenameDataGridViewTextBoxColumn.DataPropertyName = "Product_type_name";
+            this.producttypenameDataGridViewTextBoxColumn.HeaderText = "Тип продукта";
+            this.producttypenameDataGridViewTextBoxColumn.Name = "producttypenameDataGridViewTextBoxColumn";
+            this.producttypenameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // addButton
             // 
             this.addButton.Location = new System.Drawing.Point(12, 7);
@@ -137,26 +175,9 @@
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // milkWorkDataSet
-            // 
-            this.milkWorkDataSet.DataSetName = "MilkWorkDataSet";
-            this.milkWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // producttypeBindingSource
-            // 
-            this.producttypeBindingSource.DataMember = "Product_type";
-            this.producttypeBindingSource.DataSource = this.milkWorkDataSet;
-            // 
             // product_typeTableAdapter
             // 
             this.product_typeTableAdapter.ClearBeforeFill = true;
-            // 
-            // producttypenameDataGridViewTextBoxColumn
-            // 
-            this.producttypenameDataGridViewTextBoxColumn.DataPropertyName = "Product_type_name";
-            this.producttypenameDataGridViewTextBoxColumn.HeaderText = "Тип продукта";
-            this.producttypenameDataGridViewTextBoxColumn.Name = "producttypenameDataGridViewTextBoxColumn";
-            this.producttypenameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tableAdapterManager
             // 
@@ -186,43 +207,25 @@
             this.tableAdapterManager.UnitTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Route.MilkWorkDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // product_type_nameLabel
-            // 
-            product_type_nameLabel.AutoSize = true;
-            product_type_nameLabel.Location = new System.Drawing.Point(6, 16);
-            product_type_nameLabel.Name = "product_type_nameLabel";
-            product_type_nameLabel.Size = new System.Drawing.Size(78, 13);
-            product_type_nameLabel.TabIndex = 5;
-            product_type_nameLabel.Text = "Тип продукта:";
-            // 
-            // product_type_nameTextBox
-            // 
-            this.product_type_nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.product_type_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.producttypeBindingSource, "Product_type_name", true));
-            this.product_type_nameTextBox.Location = new System.Drawing.Point(6, 32);
-            this.product_type_nameTextBox.Name = "product_type_nameTextBox";
-            this.product_type_nameTextBox.Size = new System.Drawing.Size(258, 20);
-            this.product_type_nameTextBox.TabIndex = 6;
-            // 
             // productTypesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(294, 379);
+            this.ClientSize = new System.Drawing.Size(294, 381);
             this.Controls.Add(this.prodTypeGroupBox);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.prodTypesDataGridView);
             this.Controls.Add(this.addButton);
+            this.MinimumSize = new System.Drawing.Size(310, 420);
             this.Name = "productTypesForm";
-            this.Text = "productTypesForm";
+            this.Text = "Справочник типов продуктов";
             this.Load += new System.EventHandler(this.productTypesForm_Load);
             this.prodTypeGroupBox.ResumeLayout(false);
             this.prodTypeGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.prodTypesDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.producttypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prodTypesDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }

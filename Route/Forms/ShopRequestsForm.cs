@@ -121,11 +121,6 @@ namespace Route.Forms
             requestStructViewBindingSource.CancelEdit();
 
             shopRequestStructGroupBox.Enabled = false;
-        }
-
-        private void shopRequestsDataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        }       
     }
 }

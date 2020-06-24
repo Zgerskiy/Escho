@@ -61,17 +61,18 @@
             // 
             // regionGroupBox
             // 
-            this.regionGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.regionGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.regionGroupBox.Controls.Add(region_nameLabel);
             this.regionGroupBox.Controls.Add(this.region_nameTextBox);
             this.regionGroupBox.Controls.Add(this.cancelButton);
             this.regionGroupBox.Controls.Add(this.saveButton);
             this.regionGroupBox.Enabled = false;
-            this.regionGroupBox.Location = new System.Drawing.Point(12, 285);
+            this.regionGroupBox.Location = new System.Drawing.Point(12, 302);
+            this.regionGroupBox.MaximumSize = new System.Drawing.Size(310, 87);
+            this.regionGroupBox.MinimumSize = new System.Drawing.Size(310, 87);
             this.regionGroupBox.Name = "regionGroupBox";
-            this.regionGroupBox.Size = new System.Drawing.Size(308, 101);
+            this.regionGroupBox.Size = new System.Drawing.Size(310, 87);
             this.regionGroupBox.TabIndex = 14;
             this.regionGroupBox.TabStop = false;
             this.regionGroupBox.Text = "Информация о районе";
@@ -83,7 +84,7 @@
             this.region_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.regionBindingSource, "Region_name", true));
             this.region_nameTextBox.Location = new System.Drawing.Point(11, 32);
             this.region_nameTextBox.Name = "region_nameTextBox";
-            this.region_nameTextBox.Size = new System.Drawing.Size(291, 20);
+            this.region_nameTextBox.Size = new System.Drawing.Size(293, 20);
             this.region_nameTextBox.TabIndex = 6;
             // 
             // regionBindingSource
@@ -98,7 +99,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(87, 58);
+            this.cancelButton.Location = new System.Drawing.Point(92, 58);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 5;
@@ -108,7 +109,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(6, 58);
+            this.saveButton.Location = new System.Drawing.Point(11, 58);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 4;
@@ -140,7 +141,8 @@
             // 
             this.regionsDataGridView.AllowUserToAddRows = false;
             this.regionsDataGridView.AllowUserToDeleteRows = false;
-            this.regionsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.regionsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.regionsDataGridView.AutoGenerateColumns = false;
             this.regionsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -153,7 +155,7 @@
             this.regionsDataGridView.ReadOnly = true;
             this.regionsDataGridView.RowHeadersVisible = false;
             this.regionsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.regionsDataGridView.Size = new System.Drawing.Size(308, 239);
+            this.regionsDataGridView.Size = new System.Drawing.Size(310, 256);
             this.regionsDataGridView.TabIndex = 11;
             // 
             // regionnameDataGridViewTextBoxColumn
@@ -209,14 +211,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 398);
+            this.ClientSize = new System.Drawing.Size(334, 401);
             this.Controls.Add(this.regionGroupBox);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.regionsDataGridView);
             this.Controls.Add(this.addButton);
+            this.MinimumSize = new System.Drawing.Size(350, 440);
             this.Name = "RegionForm";
-            this.Text = "RegionForm";
+            this.Text = "Справочник областей";
             this.Load += new System.EventHandler(this.RegionForm_Load);
             this.regionGroupBox.ResumeLayout(false);
             this.regionGroupBox.PerformLayout();

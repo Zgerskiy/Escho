@@ -86,5 +86,10 @@ namespace Route.Forms
         {
             new StreetsForm().ShowDialog();
         }
+
+        private void productsButton_Click(object sender, EventArgs e)
+        {
+            new ProductForm().ShowDialog();
+        }
     }
 }

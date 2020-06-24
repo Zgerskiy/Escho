@@ -109,8 +109,7 @@
             // 
             // localityGroupBox
             // 
-            this.localityGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.localityGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.localityGroupBox.Controls.Add(locality_nameLabel);
             this.localityGroupBox.Controls.Add(this.locality_nameTextBox);
@@ -123,9 +122,11 @@
             this.localityGroupBox.Controls.Add(this.cancelButton);
             this.localityGroupBox.Controls.Add(this.saveButton);
             this.localityGroupBox.Enabled = false;
-            this.localityGroupBox.Location = new System.Drawing.Point(12, 289);
+            this.localityGroupBox.Location = new System.Drawing.Point(12, 218);
+            this.localityGroupBox.MaximumSize = new System.Drawing.Size(225, 210);
+            this.localityGroupBox.MinimumSize = new System.Drawing.Size(225, 210);
             this.localityGroupBox.Name = "localityGroupBox";
-            this.localityGroupBox.Size = new System.Drawing.Size(776, 210);
+            this.localityGroupBox.Size = new System.Drawing.Size(225, 210);
             this.localityGroupBox.TabIndex = 24;
             this.localityGroupBox.TabStop = false;
             this.localityGroupBox.Text = "Информация о населенном пункте";
@@ -153,6 +154,7 @@
             this.area_nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.localityBindingSource, "Id_area", true));
             this.area_nameComboBox.DataSource = this.areaBindingSource;
             this.area_nameComboBox.DisplayMember = "Area_name";
+            this.area_nameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.area_nameComboBox.FormattingEnabled = true;
             this.area_nameComboBox.Location = new System.Drawing.Point(9, 75);
             this.area_nameComboBox.Name = "area_nameComboBox";
@@ -170,6 +172,7 @@
             this.region_nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.localityBindingSource, "Id_region", true));
             this.region_nameComboBox.DataSource = this.regionBindingSource;
             this.region_nameComboBox.DisplayMember = "Region_name";
+            this.region_nameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.region_nameComboBox.FormattingEnabled = true;
             this.region_nameComboBox.Location = new System.Drawing.Point(9, 32);
             this.region_nameComboBox.Name = "region_nameComboBox";
@@ -188,6 +191,7 @@
             this.locality_type_nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.localityBindingSource, "Id_locality_type", true));
             this.locality_type_nameComboBox.DataSource = this.localitytypeBindingSource;
             this.locality_type_nameComboBox.DisplayMember = "Locality_type_name";
+            this.locality_type_nameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.locality_type_nameComboBox.FormattingEnabled = true;
             this.locality_type_nameComboBox.Location = new System.Drawing.Point(9, 115);
             this.locality_type_nameComboBox.Name = "locality_type_nameComboBox";
@@ -244,7 +248,8 @@
             // 
             this.localitiesDataGridView.AllowUserToAddRows = false;
             this.localitiesDataGridView.AllowUserToDeleteRows = false;
-            this.localitiesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.localitiesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.localitiesDataGridView.AutoGenerateColumns = false;
             this.localitiesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -260,7 +265,7 @@
             this.localitiesDataGridView.ReadOnly = true;
             this.localitiesDataGridView.RowHeadersVisible = false;
             this.localitiesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.localitiesDataGridView.Size = new System.Drawing.Size(776, 239);
+            this.localitiesDataGridView.Size = new System.Drawing.Size(780, 168);
             this.localitiesDataGridView.TabIndex = 21;
             this.localitiesDataGridView.SelectionChanged += new System.EventHandler(this.localitiesDataGridView_SelectionChanged);
             // 
@@ -350,14 +355,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 514);
+            this.ClientSize = new System.Drawing.Size(804, 431);
             this.Controls.Add(this.localityGroupBox);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.localitiesDataGridView);
             this.Controls.Add(this.addButton);
+            this.MinimumSize = new System.Drawing.Size(820, 470);
             this.Name = "LocalitiesForm";
-            this.Text = "LocalitiesForm";
+            this.Text = "Справочник наслеленных пунктов";
             this.Load += new System.EventHandler(this.LocalitiesForm_Load);
             this.localityGroupBox.ResumeLayout(false);
             this.localityGroupBox.PerformLayout();

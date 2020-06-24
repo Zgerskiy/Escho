@@ -61,17 +61,18 @@
             // 
             // unitGroupBox
             // 
-            this.unitGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.unitGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.unitGroupBox.Controls.Add(unit_nameLabel);
             this.unitGroupBox.Controls.Add(this.unit_nameTextBox);
             this.unitGroupBox.Controls.Add(this.cancelButton);
             this.unitGroupBox.Controls.Add(this.saveButton);
             this.unitGroupBox.Enabled = false;
-            this.unitGroupBox.Location = new System.Drawing.Point(12, 281);
+            this.unitGroupBox.Location = new System.Drawing.Point(12, 283);
+            this.unitGroupBox.MaximumSize = new System.Drawing.Size(246, 84);
+            this.unitGroupBox.MinimumSize = new System.Drawing.Size(246, 84);
             this.unitGroupBox.Name = "unitGroupBox";
-            this.unitGroupBox.Size = new System.Drawing.Size(248, 101);
+            this.unitGroupBox.Size = new System.Drawing.Size(246, 84);
             this.unitGroupBox.TabIndex = 9;
             this.unitGroupBox.TabStop = false;
             this.unitGroupBox.Text = "Информация о единице измерения";
@@ -83,7 +84,7 @@
             this.unit_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.unitBindingSource, "Unit_name", true));
             this.unit_nameTextBox.Location = new System.Drawing.Point(6, 32);
             this.unit_nameTextBox.Name = "unit_nameTextBox";
-            this.unit_nameTextBox.Size = new System.Drawing.Size(236, 20);
+            this.unit_nameTextBox.Size = new System.Drawing.Size(234, 20);
             this.unit_nameTextBox.TabIndex = 6;
             // 
             // unitBindingSource
@@ -140,7 +141,8 @@
             // 
             this.unitsDataGridView.AllowUserToAddRows = false;
             this.unitsDataGridView.AllowUserToDeleteRows = false;
-            this.unitsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.unitsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.unitsDataGridView.AutoGenerateColumns = false;
             this.unitsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -153,7 +155,7 @@
             this.unitsDataGridView.ReadOnly = true;
             this.unitsDataGridView.RowHeadersVisible = false;
             this.unitsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.unitsDataGridView.Size = new System.Drawing.Size(248, 239);
+            this.unitsDataGridView.Size = new System.Drawing.Size(247, 239);
             this.unitsDataGridView.TabIndex = 6;
             // 
             // unitnameDataGridViewTextBoxColumn
@@ -209,14 +211,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(272, 385);
+            this.ClientSize = new System.Drawing.Size(271, 377);
             this.Controls.Add(this.unitGroupBox);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.unitsDataGridView);
             this.Controls.Add(this.addButton);
+            this.MinimumSize = new System.Drawing.Size(287, 416);
             this.Name = "UnitsForm";
-            this.Text = "UnitsForm";
+            this.Text = "Справочник ед. изм.";
             this.Load += new System.EventHandler(this.UnitsForm_Load);
             this.unitGroupBox.ResumeLayout(false);
             this.unitGroupBox.PerformLayout();

@@ -4240,6 +4240,10 @@ namespace Route {
             
             private global::System.Data.DataColumn columnId_car;
             
+            private global::System.Data.DataColumn columnCar_type_name;
+            
+            private global::System.Data.DataColumn columnFullCar;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public RouteDataTable() {
@@ -4315,6 +4319,22 @@ namespace Route {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Car_type_nameColumn {
+                get {
+                    return this.columnCar_type_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FullCarColumn {
+                get {
+                    return this.columnFullCar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4350,14 +4370,16 @@ namespace Route {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RouteRow AddRouteRow(string Route_name, System.DateTime Route_date, double Route_distance, CarRow parentCarRowByFK__Route__Id_car__17036CC0) {
+            public RouteRow AddRouteRow(string Route_name, System.DateTime Route_date, double Route_distance, CarRow parentCarRowByFK__Route__Id_car__17036CC0, string Car_type_name, string FullCar) {
                 RouteRow rowRouteRow = ((RouteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Route_name,
                         Route_date,
                         Route_distance,
-                        null};
+                        null,
+                        Car_type_name,
+                        FullCar};
                 if ((parentCarRowByFK__Route__Id_car__17036CC0 != null)) {
                     columnValuesArray[4] = parentCarRowByFK__Route__Id_car__17036CC0[0];
                 }
@@ -4395,6 +4417,8 @@ namespace Route {
                 this.columnRoute_date = base.Columns["Route_date"];
                 this.columnRoute_distance = base.Columns["Route_distance"];
                 this.columnId_car = base.Columns["Id_car"];
+                this.columnCar_type_name = base.Columns["Car_type_name"];
+                this.columnFullCar = base.Columns["FullCar"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4410,6 +4434,10 @@ namespace Route {
                 base.Columns.Add(this.columnRoute_distance);
                 this.columnId_car = new global::System.Data.DataColumn("Id_car", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId_car);
+                this.columnCar_type_name = new global::System.Data.DataColumn("Car_type_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCar_type_name);
+                this.columnFullCar = new global::System.Data.DataColumn("FullCar", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFullCar);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_route}, true));
                 this.columnId_route.AutoIncrement = true;
@@ -4423,6 +4451,10 @@ namespace Route {
                 this.columnRoute_date.AllowDBNull = false;
                 this.columnRoute_distance.AllowDBNull = false;
                 this.columnId_car.AllowDBNull = false;
+                this.columnCar_type_name.AllowDBNull = false;
+                this.columnCar_type_name.MaxLength = 200;
+                this.columnFullCar.ReadOnly = true;
+                this.columnFullCar.MaxLength = 409;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9838,6 +9870,33 @@ namespace Route {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Car_type_name {
+                get {
+                    return ((string)(this[this.tableRoute.Car_type_nameColumn]));
+                }
+                set {
+                    this[this.tableRoute.Car_type_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string FullCar {
+                get {
+                    try {
+                        return ((string)(this[this.tableRoute.FullCarColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'FullCar\' в таблице \'Route\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRoute.FullCarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CarRow CarRow {
                 get {
                     return ((CarRow)(this.GetParentRow(this.Table.ParentRelations["FK__Route__Id_car__17036CC0"])));
@@ -9845,6 +9904,18 @@ namespace Route {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__Route__Id_car__17036CC0"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFullCarNull() {
+                return this.IsNull(this.tableRoute.FullCarColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFullCarNull() {
+                this[this.tableRoute.FullCarColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15986,6 +16057,8 @@ SELECT Id_shop_struct, Id_product, Id_shop_request, Product_count FROM Request_s
             tableMapping.ColumnMappings.Add("Route_date", "Route_date");
             tableMapping.ColumnMappings.Add("Route_distance", "Route_distance");
             tableMapping.ColumnMappings.Add("Id_car", "Id_car");
+            tableMapping.ColumnMappings.Add("Car_type_name", "Car_type_name");
+            tableMapping.ColumnMappings.Add("FullCar", "FullCar");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -16036,7 +16109,9 @@ SELECT Id_route, Route_name, Route_date, Route_distance, Id_car FROM Route WHERE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id_route, Route_name, Route_date, Route_distance, Id_car FROM dbo.Route";
+            this._commandCollection[0].CommandText = @"SELECT        Route.Id_route, Route.Route_name, Route.Route_date, Route.Route_distance, Route.Id_car, CarView.Car_type_name, CarView.Mark_name + N' ' + CarView.Model_name + N' ' + CarView.Car_number AS FullCar
+FROM            Route INNER JOIN
+                         CarView ON Route.Id_car = CarView.Id_car";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;

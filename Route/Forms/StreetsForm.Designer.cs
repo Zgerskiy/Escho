@@ -113,8 +113,7 @@
             // 
             // streetGroupBox
             // 
-            this.streetGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.streetGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.streetGroupBox.Controls.Add(this.locality_nameComboBox);
             this.streetGroupBox.Controls.Add(street_nameLabel);
@@ -128,8 +127,10 @@
             this.streetGroupBox.Controls.Add(this.saveButton);
             this.streetGroupBox.Enabled = false;
             this.streetGroupBox.Location = new System.Drawing.Point(12, 291);
+            this.streetGroupBox.MaximumSize = new System.Drawing.Size(226, 212);
+            this.streetGroupBox.MinimumSize = new System.Drawing.Size(226, 212);
             this.streetGroupBox.Name = "streetGroupBox";
-            this.streetGroupBox.Size = new System.Drawing.Size(776, 212);
+            this.streetGroupBox.Size = new System.Drawing.Size(226, 212);
             this.streetGroupBox.TabIndex = 29;
             this.streetGroupBox.TabStop = false;
             this.streetGroupBox.Text = "Информация о населенном пункте";
@@ -139,6 +140,7 @@
             this.locality_nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.streetBindingSource, "Id_locality", true));
             this.locality_nameComboBox.DataSource = this.localityBindingSource;
             this.locality_nameComboBox.DisplayMember = "Address";
+            this.locality_nameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.locality_nameComboBox.FormattingEnabled = true;
             this.locality_nameComboBox.Location = new System.Drawing.Point(9, 113);
             this.locality_nameComboBox.Name = "locality_nameComboBox";
@@ -174,6 +176,7 @@
             this.area_nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.streetBindingSource, "Id_area", true));
             this.area_nameComboBox.DataSource = this.areaBindingSource;
             this.area_nameComboBox.DisplayMember = "Area_name";
+            this.area_nameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.area_nameComboBox.FormattingEnabled = true;
             this.area_nameComboBox.Location = new System.Drawing.Point(9, 75);
             this.area_nameComboBox.Name = "area_nameComboBox";
@@ -192,6 +195,7 @@
             this.region_nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.streetBindingSource, "Id_region", true));
             this.region_nameComboBox.DataSource = this.regionBindingSource;
             this.region_nameComboBox.DisplayMember = "Region_name";
+            this.region_nameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.region_nameComboBox.FormattingEnabled = true;
             this.region_nameComboBox.Location = new System.Drawing.Point(9, 32);
             this.region_nameComboBox.Name = "region_nameComboBox";
@@ -254,7 +258,8 @@
             // 
             this.streetsDataGridView.AllowUserToAddRows = false;
             this.streetsDataGridView.AllowUserToDeleteRows = false;
-            this.streetsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.streetsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.streetsDataGridView.AutoGenerateColumns = false;
             this.streetsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -271,7 +276,7 @@
             this.streetsDataGridView.ReadOnly = true;
             this.streetsDataGridView.RowHeadersVisible = false;
             this.streetsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.streetsDataGridView.Size = new System.Drawing.Size(776, 239);
+            this.streetsDataGridView.Size = new System.Drawing.Size(776, 246);
             this.streetsDataGridView.TabIndex = 26;
             this.streetsDataGridView.SelectionChanged += new System.EventHandler(this.streetsDataGridView_SelectionChanged);
             // 
@@ -372,12 +377,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 515);
+            this.ClientSize = new System.Drawing.Size(800, 507);
             this.Controls.Add(this.streetGroupBox);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.streetsDataGridView);
             this.Controls.Add(this.addButton);
+            this.MinimumSize = new System.Drawing.Size(816, 546);
             this.Name = "StreetsForm";
             this.Text = "StreetsForm";
             this.Load += new System.EventHandler(this.StreetsForm_Load);

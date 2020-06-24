@@ -121,8 +121,7 @@
             // 
             // shopRequestGroupBox
             // 
-            this.shopRequestGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.shopRequestGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.shopRequestGroupBox.Controls.Add(this.cancelButton);
             this.shopRequestGroupBox.Controls.Add(this.saveButton);
@@ -132,8 +131,10 @@
             this.shopRequestGroupBox.Controls.Add(this.id_shopComboBox);
             this.shopRequestGroupBox.Enabled = false;
             this.shopRequestGroupBox.Location = new System.Drawing.Point(12, 279);
+            this.shopRequestGroupBox.MaximumSize = new System.Drawing.Size(220, 130);
+            this.shopRequestGroupBox.MinimumSize = new System.Drawing.Size(220, 130);
             this.shopRequestGroupBox.Name = "shopRequestGroupBox";
-            this.shopRequestGroupBox.Size = new System.Drawing.Size(493, 169);
+            this.shopRequestGroupBox.Size = new System.Drawing.Size(220, 130);
             this.shopRequestGroupBox.TabIndex = 0;
             this.shopRequestGroupBox.TabStop = false;
             this.shopRequestGroupBox.Text = "Информация о заявке";
@@ -182,6 +183,7 @@
             this.id_shopComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.shopRequestViewBindingSource, "Id_shop", true));
             this.id_shopComboBox.DataSource = this.shopViewBindingSource;
             this.id_shopComboBox.DisplayMember = "Shop_name";
+            this.id_shopComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.id_shopComboBox.FormattingEnabled = true;
             this.id_shopComboBox.Location = new System.Drawing.Point(6, 71);
             this.id_shopComboBox.Name = "id_shopComboBox";
@@ -198,8 +200,8 @@
             // 
             this.shopRequestsDataGridView.AllowUserToAddRows = false;
             this.shopRequestsDataGridView.AllowUserToDeleteRows = false;
-            this.shopRequestsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.shopRequestsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.shopRequestsDataGridView.AutoGenerateColumns = false;
             this.shopRequestsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.shopRequestsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -306,6 +308,8 @@
             // 
             // shopRequestStructGroupBox
             // 
+            this.shopRequestStructGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.shopRequestStructGroupBox.Controls.Add(this.cancelRequestButton);
             this.shopRequestStructGroupBox.Controls.Add(this.saveRequestButton);
             this.shopRequestStructGroupBox.Controls.Add(id_productLabel);
@@ -314,8 +318,10 @@
             this.shopRequestStructGroupBox.Controls.Add(this.product_countTextBox);
             this.shopRequestStructGroupBox.Enabled = false;
             this.shopRequestStructGroupBox.Location = new System.Drawing.Point(509, 279);
+            this.shopRequestStructGroupBox.MaximumSize = new System.Drawing.Size(229, 131);
+            this.shopRequestStructGroupBox.MinimumSize = new System.Drawing.Size(229, 131);
             this.shopRequestStructGroupBox.Name = "shopRequestStructGroupBox";
-            this.shopRequestStructGroupBox.Size = new System.Drawing.Size(448, 169);
+            this.shopRequestStructGroupBox.Size = new System.Drawing.Size(229, 131);
             this.shopRequestStructGroupBox.TabIndex = 9;
             this.shopRequestStructGroupBox.TabStop = false;
             this.shopRequestStructGroupBox.Text = "Структура заявки";
@@ -345,6 +351,7 @@
             this.id_productComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.requestStructViewBindingSource, "Id_product", true));
             this.id_productComboBox.DataSource = this.productViewBindingSource;
             this.id_productComboBox.DisplayMember = "Product_name";
+            this.id_productComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.id_productComboBox.FormattingEnabled = true;
             this.id_productComboBox.Location = new System.Drawing.Point(9, 32);
             this.id_productComboBox.Name = "id_productComboBox";
@@ -412,6 +419,9 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -461,7 +471,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 450);
+            this.ClientSize = new System.Drawing.Size(957, 416);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.removeStructButton);
             this.Controls.Add(this.editStructButton);
@@ -472,6 +482,7 @@
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.shopRequestsDataGridView);
             this.Controls.Add(this.shopRequestGroupBox);
+            this.MinimumSize = new System.Drawing.Size(973, 455);
             this.Name = "ShopRequestsForm";
             this.Text = "Заявки магазинов";
             this.Load += new System.EventHandler(this.ShopRequestsForm_Load);

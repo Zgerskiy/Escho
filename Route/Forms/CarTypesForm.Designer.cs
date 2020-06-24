@@ -31,29 +31,37 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label car_type_nameLabel;
             this.carTypeGroupBox = new System.Windows.Forms.GroupBox();
+            this.car_type_nameTextBox = new System.Windows.Forms.TextBox();
+            this.car_typeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.milkWorkDataSet = new Route.MilkWorkDataSet();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.marksDataGridView = new System.Windows.Forms.DataGridView();
+            this.cartypenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addButton = new System.Windows.Forms.Button();
-            this.milkWorkDataSet = new Route.MilkWorkDataSet();
-            this.car_typeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.car_typeTableAdapter = new Route.MilkWorkDataSetTableAdapters.Car_typeTableAdapter();
             this.tableAdapterManager = new Route.MilkWorkDataSetTableAdapters.TableAdapterManager();
-            this.car_type_nameTextBox = new System.Windows.Forms.TextBox();
-            this.cartypenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             car_type_nameLabel = new System.Windows.Forms.Label();
             this.carTypeGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.marksDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.car_typeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marksDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // car_type_nameLabel
+            // 
+            car_type_nameLabel.AutoSize = true;
+            car_type_nameLabel.Location = new System.Drawing.Point(6, 16);
+            car_type_nameLabel.Name = "car_type_nameLabel";
+            car_type_nameLabel.Size = new System.Drawing.Size(55, 13);
+            car_type_nameLabel.TabIndex = 5;
+            car_type_nameLabel.Text = "Тип авто:";
             // 
             // carTypeGroupBox
             // 
-            this.carTypeGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.carTypeGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.carTypeGroupBox.Controls.Add(car_type_nameLabel);
             this.carTypeGroupBox.Controls.Add(this.car_type_nameTextBox);
@@ -61,11 +69,31 @@
             this.carTypeGroupBox.Controls.Add(this.saveButton);
             this.carTypeGroupBox.Enabled = false;
             this.carTypeGroupBox.Location = new System.Drawing.Point(12, 282);
+            this.carTypeGroupBox.MaximumSize = new System.Drawing.Size(300, 90);
+            this.carTypeGroupBox.MinimumSize = new System.Drawing.Size(300, 90);
             this.carTypeGroupBox.Name = "carTypeGroupBox";
-            this.carTypeGroupBox.Size = new System.Drawing.Size(301, 88);
+            this.carTypeGroupBox.Size = new System.Drawing.Size(300, 90);
             this.carTypeGroupBox.TabIndex = 9;
             this.carTypeGroupBox.TabStop = false;
             this.carTypeGroupBox.Text = "Информация о типе авто";
+            // 
+            // car_type_nameTextBox
+            // 
+            this.car_type_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.car_typeBindingSource, "Car_type_name", true));
+            this.car_type_nameTextBox.Location = new System.Drawing.Point(6, 32);
+            this.car_type_nameTextBox.Name = "car_type_nameTextBox";
+            this.car_type_nameTextBox.Size = new System.Drawing.Size(289, 20);
+            this.car_type_nameTextBox.TabIndex = 6;
+            // 
+            // car_typeBindingSource
+            // 
+            this.car_typeBindingSource.DataMember = "Car_type";
+            this.car_typeBindingSource.DataSource = this.milkWorkDataSet;
+            // 
+            // milkWorkDataSet
+            // 
+            this.milkWorkDataSet.DataSetName = "MilkWorkDataSet";
+            this.milkWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cancelButton
             // 
@@ -111,7 +139,8 @@
             // 
             this.marksDataGridView.AllowUserToAddRows = false;
             this.marksDataGridView.AllowUserToDeleteRows = false;
-            this.marksDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.marksDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.marksDataGridView.AutoGenerateColumns = false;
             this.marksDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -124,8 +153,15 @@
             this.marksDataGridView.ReadOnly = true;
             this.marksDataGridView.RowHeadersVisible = false;
             this.marksDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.marksDataGridView.Size = new System.Drawing.Size(301, 239);
+            this.marksDataGridView.Size = new System.Drawing.Size(542, 239);
             this.marksDataGridView.TabIndex = 6;
+            // 
+            // cartypenameDataGridViewTextBoxColumn
+            // 
+            this.cartypenameDataGridViewTextBoxColumn.DataPropertyName = "Car_type_name";
+            this.cartypenameDataGridViewTextBoxColumn.HeaderText = "Тип авто";
+            this.cartypenameDataGridViewTextBoxColumn.Name = "cartypenameDataGridViewTextBoxColumn";
+            this.cartypenameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // addButton
             // 
@@ -136,16 +172,6 @@
             this.addButton.Text = "Добавить";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
-            // 
-            // milkWorkDataSet
-            // 
-            this.milkWorkDataSet.DataSetName = "MilkWorkDataSet";
-            this.milkWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // car_typeBindingSource
-            // 
-            this.car_typeBindingSource.DataMember = "Car_type";
-            this.car_typeBindingSource.DataSource = this.milkWorkDataSet;
             // 
             // car_typeTableAdapter
             // 
@@ -179,48 +205,25 @@
             this.tableAdapterManager.UnitTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Route.MilkWorkDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // car_type_nameLabel
-            // 
-            car_type_nameLabel.AutoSize = true;
-            car_type_nameLabel.Location = new System.Drawing.Point(6, 16);
-            car_type_nameLabel.Name = "car_type_nameLabel";
-            car_type_nameLabel.Size = new System.Drawing.Size(55, 13);
-            car_type_nameLabel.TabIndex = 5;
-            car_type_nameLabel.Text = "Тип авто:";
-            // 
-            // car_type_nameTextBox
-            // 
-            this.car_type_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.car_typeBindingSource, "Car_type_name", true));
-            this.car_type_nameTextBox.Location = new System.Drawing.Point(6, 32);
-            this.car_type_nameTextBox.Name = "car_type_nameTextBox";
-            this.car_type_nameTextBox.Size = new System.Drawing.Size(289, 20);
-            this.car_type_nameTextBox.TabIndex = 6;
-            // 
-            // cartypenameDataGridViewTextBoxColumn
-            // 
-            this.cartypenameDataGridViewTextBoxColumn.DataPropertyName = "Car_type_name";
-            this.cartypenameDataGridViewTextBoxColumn.HeaderText = "Тип авто";
-            this.cartypenameDataGridViewTextBoxColumn.Name = "cartypenameDataGridViewTextBoxColumn";
-            this.cartypenameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // CarTypesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 382);
+            this.ClientSize = new System.Drawing.Size(566, 381);
             this.Controls.Add(this.carTypeGroupBox);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.marksDataGridView);
             this.Controls.Add(this.addButton);
+            this.MinimumSize = new System.Drawing.Size(340, 420);
             this.Name = "CarTypesForm";
-            this.Text = "CarTypesForm";
+            this.Text = "Справочник типов авто";
             this.Load += new System.EventHandler(this.CarTypesForm_Load);
             this.carTypeGroupBox.ResumeLayout(false);
             this.carTypeGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.marksDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.car_typeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marksDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }

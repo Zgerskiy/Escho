@@ -97,7 +97,8 @@
             // 
             this.productsDataGridView.AllowUserToAddRows = false;
             this.productsDataGridView.AllowUserToDeleteRows = false;
-            this.productsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.productsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.productsDataGridView.AutoGenerateColumns = false;
             this.productsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -112,7 +113,7 @@
             this.productsDataGridView.ReadOnly = true;
             this.productsDataGridView.RowHeadersVisible = false;
             this.productsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productsDataGridView.Size = new System.Drawing.Size(776, 237);
+            this.productsDataGridView.Size = new System.Drawing.Size(612, 237);
             this.productsDataGridView.TabIndex = 1;
             // 
             // productnameDataGridViewTextBoxColumn
@@ -148,8 +149,7 @@
             // 
             // productGroupBox
             // 
-            this.productGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.productGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.productGroupBox.Controls.Add(this.addUnitButton);
             this.productGroupBox.Controls.Add(this.addProductTypeButton);
@@ -163,8 +163,10 @@
             this.productGroupBox.Controls.Add(this.id_unitComboBox);
             this.productGroupBox.Enabled = false;
             this.productGroupBox.Location = new System.Drawing.Point(12, 286);
+            this.productGroupBox.MaximumSize = new System.Drawing.Size(270, 166);
+            this.productGroupBox.MinimumSize = new System.Drawing.Size(270, 166);
             this.productGroupBox.Name = "productGroupBox";
-            this.productGroupBox.Size = new System.Drawing.Size(776, 166);
+            this.productGroupBox.Size = new System.Drawing.Size(270, 166);
             this.productGroupBox.TabIndex = 2;
             this.productGroupBox.TabStop = false;
             this.productGroupBox.Text = "Информация о продукте";
@@ -222,6 +224,7 @@
             this.id_product_typeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productViewBindingSource, "Id_product_type", true));
             this.id_product_typeComboBox.DataSource = this.producttypeBindingSource;
             this.id_product_typeComboBox.DisplayMember = "Product_type_name";
+            this.id_product_typeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.id_product_typeComboBox.FormattingEnabled = true;
             this.id_product_typeComboBox.Location = new System.Drawing.Point(6, 71);
             this.id_product_typeComboBox.Name = "id_product_typeComboBox";
@@ -239,6 +242,7 @@
             this.id_unitComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productViewBindingSource, "Id_unit", true));
             this.id_unitComboBox.DataSource = this.unitBindingSource;
             this.id_unitComboBox.DisplayMember = "Unit_name";
+            this.id_unitComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.id_unitComboBox.FormattingEnabled = true;
             this.id_unitComboBox.Location = new System.Drawing.Point(6, 111);
             this.id_unitComboBox.Name = "id_unitComboBox";
@@ -295,15 +299,18 @@
             this.tableAdapterManager.Locality_typeTableAdapter = null;
             this.tableAdapterManager.LocalityTableAdapter = null;
             this.tableAdapterManager.MarkTableAdapter = null;
+            this.tableAdapterManager.ModelTableAdapter = null;
             this.tableAdapterManager.Product_typeTableAdapter = this.product_typeTableAdapter;
             this.tableAdapterManager.ProductTableAdapter = null;
             this.tableAdapterManager.ProductViewTableAdapter = this.productViewTableAdapter;
             this.tableAdapterManager.RegionTableAdapter = null;
             this.tableAdapterManager.Request_structTableAdapter = null;
+            this.tableAdapterManager.RequestStructViewTableAdapter = null;
             this.tableAdapterManager.Route_structTableAdapter = null;
             this.tableAdapterManager.Route_structViewTableAdapter = null;
             this.tableAdapterManager.RouteTableAdapter = null;
             this.tableAdapterManager.Shop_requestTableAdapter = null;
+            this.tableAdapterManager.ShopRequestViewTableAdapter = null;
             this.tableAdapterManager.ShopTableAdapter = null;
             this.tableAdapterManager.ShopViewTableAdapter = null;
             this.tableAdapterManager.StreetTableAdapter = null;
@@ -322,12 +329,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 464);
+            this.ClientSize = new System.Drawing.Size(636, 464);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.productGroupBox);
             this.Controls.Add(this.productsDataGridView);
+            this.MinimumSize = new System.Drawing.Size(652, 503);
             this.Name = "ProductForm";
             this.Text = "Справочник продуктов";
             this.Load += new System.EventHandler(this.ProductForm_Load);

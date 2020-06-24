@@ -34,9 +34,6 @@
             System.Windows.Forms.Label carLabel;
             System.Windows.Forms.Label label1;
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.routenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.routedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.routedistanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.routeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.milkWorkDataSet = new Route.MilkWorkDataSet();
             this.addButton = new System.Windows.Forms.Button();
@@ -62,7 +59,6 @@
             this.carViewTableAdapter = new Route.MilkWorkDataSetTableAdapters.CarViewTableAdapter();
             this.shopViewTableAdapter = new Route.MilkWorkDataSetTableAdapters.ShopViewTableAdapter();
             this.routeStructGroupBox = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.shopComboBox = new System.Windows.Forms.ComboBox();
             this.removePointButton = new System.Windows.Forms.Button();
             this.addPointButton = new System.Windows.Forms.Button();
@@ -70,6 +66,11 @@
             this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Shop_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.routenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.routedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullCar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Car_type_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.routedistanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             route_nameLabel = new System.Windows.Forms.Label();
             route_dateLabel = new System.Windows.Forms.Label();
             carLabel = new System.Windows.Forms.Label();
@@ -126,12 +127,16 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.routenameDataGridViewTextBoxColumn,
             this.routedateDataGridViewTextBoxColumn,
+            this.FullCar,
+            this.Car_type_name,
             this.routedistanceDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.routeBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 41);
@@ -139,30 +144,9 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(526, 214);
+            this.dataGridView1.Size = new System.Drawing.Size(588, 298);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // routenameDataGridViewTextBoxColumn
-            // 
-            this.routenameDataGridViewTextBoxColumn.DataPropertyName = "Route_name";
-            this.routenameDataGridViewTextBoxColumn.HeaderText = "Маршрут";
-            this.routenameDataGridViewTextBoxColumn.Name = "routenameDataGridViewTextBoxColumn";
-            this.routenameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // routedateDataGridViewTextBoxColumn
-            // 
-            this.routedateDataGridViewTextBoxColumn.DataPropertyName = "Route_date";
-            this.routedateDataGridViewTextBoxColumn.HeaderText = "Дата";
-            this.routedateDataGridViewTextBoxColumn.Name = "routedateDataGridViewTextBoxColumn";
-            this.routedateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // routedistanceDataGridViewTextBoxColumn
-            // 
-            this.routedistanceDataGridViewTextBoxColumn.DataPropertyName = "Route_distance";
-            this.routedistanceDataGridViewTextBoxColumn.HeaderText = "Длинна маршрута  (км)";
-            this.routedistanceDataGridViewTextBoxColumn.Name = "routedistanceDataGridViewTextBoxColumn";
-            this.routedistanceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // routeBindingSource
             // 
@@ -206,9 +190,7 @@
             // 
             // routeGroupBox
             // 
-            this.routeGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.routeGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.routeGroupBox.Controls.Add(carLabel);
             this.routeGroupBox.Controls.Add(this.carComboBox);
             this.routeGroupBox.Controls.Add(this.cancelButton);
@@ -218,9 +200,9 @@
             this.routeGroupBox.Controls.Add(route_dateLabel);
             this.routeGroupBox.Controls.Add(this.route_dateDateTimePicker);
             this.routeGroupBox.Enabled = false;
-            this.routeGroupBox.Location = new System.Drawing.Point(12, 261);
+            this.routeGroupBox.Location = new System.Drawing.Point(12, 345);
             this.routeGroupBox.Name = "routeGroupBox";
-            this.routeGroupBox.Size = new System.Drawing.Size(526, 257);
+            this.routeGroupBox.Size = new System.Drawing.Size(588, 173);
             this.routeGroupBox.TabIndex = 4;
             this.routeGroupBox.TabStop = false;
             this.routeGroupBox.Text = "Маршрут";
@@ -230,6 +212,7 @@
             this.carComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.routeBindingSource, "Id_car", true));
             this.carComboBox.DataSource = this.carViewBindingSource;
             this.carComboBox.DisplayMember = "Full_car_name";
+            this.carComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.carComboBox.FormattingEnabled = true;
             this.carComboBox.Location = new System.Drawing.Point(6, 114);
             this.carComboBox.Name = "carComboBox";
@@ -281,12 +264,15 @@
             // 
             // mapControl1
             // 
+            this.mapControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mapControl1.Layers.Add(this.imageLayer1);
             this.mapControl1.Layers.Add(this.informationLayer1);
             this.mapControl1.Location = new System.Drawing.Point(6, 266);
             this.mapControl1.Name = "mapControl1";
             this.mapControl1.NavigationPanelOptions.Visible = false;
-            this.mapControl1.Size = new System.Drawing.Size(549, 222);
+            this.mapControl1.Size = new System.Drawing.Size(548, 222);
             this.mapControl1.TabIndex = 9;
             this.imageLayer1.DataProvider = this.bingMapDataProvider1;
             this.bingMapDataProvider1.BingKey = "AkXEvTw7yRRdLI5OcK2-bQJaMt9Q4FB9pMOLAxUZjYWjxE8TEdXvSEv3vDulu4rD";
@@ -354,33 +340,24 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.routeStructGroupBox.Controls.Add(this.mapControl1);
-            this.routeStructGroupBox.Controls.Add(this.button1);
             this.routeStructGroupBox.Controls.Add(label1);
             this.routeStructGroupBox.Controls.Add(this.shopComboBox);
             this.routeStructGroupBox.Controls.Add(this.removePointButton);
             this.routeStructGroupBox.Controls.Add(this.addPointButton);
             this.routeStructGroupBox.Controls.Add(this.routeStructDataGridView);
-            this.routeStructGroupBox.Location = new System.Drawing.Point(544, 24);
+            this.routeStructGroupBox.Location = new System.Drawing.Point(606, 24);
+            this.routeStructGroupBox.MinimumSize = new System.Drawing.Size(560, 490);
             this.routeStructGroupBox.Name = "routeStructGroupBox";
-            this.routeStructGroupBox.Size = new System.Drawing.Size(561, 494);
+            this.routeStructGroupBox.Size = new System.Drawing.Size(560, 494);
             this.routeStructGroupBox.TabIndex = 7;
             this.routeStructGroupBox.TabStop = false;
             this.routeStructGroupBox.Text = "Структура маршрута";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(344, 193);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Построить маршрут";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // shopComboBox
             // 
             this.shopComboBox.DataSource = this.shopViewBindingSource;
             this.shopComboBox.DisplayMember = "Shop_name";
+            this.shopComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.shopComboBox.FormattingEnabled = true;
             this.shopComboBox.Location = new System.Drawing.Point(6, 237);
             this.shopComboBox.Name = "shopComboBox";
@@ -412,6 +389,9 @@
             // 
             this.routeStructDataGridView.AllowUserToAddRows = false;
             this.routeStructDataGridView.AllowUserToDeleteRows = false;
+            this.routeStructDataGridView.AllowUserToResizeRows = false;
+            this.routeStructDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.routeStructDataGridView.AutoGenerateColumns = false;
             this.routeStructDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.routeStructDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -425,7 +405,7 @@
             this.routeStructDataGridView.ReadOnly = true;
             this.routeStructDataGridView.RowHeadersVisible = false;
             this.routeStructDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.routeStructDataGridView.Size = new System.Drawing.Size(549, 170);
+            this.routeStructDataGridView.Size = new System.Drawing.Size(548, 170);
             this.routeStructDataGridView.TabIndex = 0;
             // 
             // numberDataGridViewTextBoxColumn
@@ -449,19 +429,56 @@
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
             this.addressDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // routenameDataGridViewTextBoxColumn
+            // 
+            this.routenameDataGridViewTextBoxColumn.DataPropertyName = "Route_name";
+            this.routenameDataGridViewTextBoxColumn.HeaderText = "Маршрут";
+            this.routenameDataGridViewTextBoxColumn.Name = "routenameDataGridViewTextBoxColumn";
+            this.routenameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // routedateDataGridViewTextBoxColumn
+            // 
+            this.routedateDataGridViewTextBoxColumn.DataPropertyName = "Route_date";
+            this.routedateDataGridViewTextBoxColumn.HeaderText = "Дата";
+            this.routedateDataGridViewTextBoxColumn.Name = "routedateDataGridViewTextBoxColumn";
+            this.routedateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // FullCar
+            // 
+            this.FullCar.DataPropertyName = "FullCar";
+            this.FullCar.HeaderText = "Автомобиль";
+            this.FullCar.Name = "FullCar";
+            this.FullCar.ReadOnly = true;
+            // 
+            // Car_type_name
+            // 
+            this.Car_type_name.DataPropertyName = "Car_type_name";
+            this.Car_type_name.HeaderText = "Тип авто";
+            this.Car_type_name.Name = "Car_type_name";
+            this.Car_type_name.ReadOnly = true;
+            // 
+            // routedistanceDataGridViewTextBoxColumn
+            // 
+            this.routedistanceDataGridViewTextBoxColumn.DataPropertyName = "Route_distance";
+            this.routedistanceDataGridViewTextBoxColumn.HeaderText = "Длинна маршрута  (км)";
+            this.routedistanceDataGridViewTextBoxColumn.Name = "routedistanceDataGridViewTextBoxColumn";
+            this.routedistanceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // RouteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 520);
+            this.ClientSize = new System.Drawing.Size(1178, 520);
             this.Controls.Add(this.routeStructGroupBox);
             this.Controls.Add(this.routeGroupBox);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.dataGridView1);
+            this.MinimumSize = new System.Drawing.Size(1133, 559);
             this.Name = "RouteForm";
             this.Text = "Маршруты";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ProductsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.routeBindingSource)).EndInit();
@@ -489,9 +506,6 @@
         private MilkWorkDataSet milkWorkDataSet;
         private System.Windows.Forms.BindingSource routeBindingSource;
         private MilkWorkDataSetTableAdapters.RouteTableAdapter routeTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn routenameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn routedateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn routedistanceDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox route_nameTextBox;
         private System.Windows.Forms.DateTimePicker route_dateDateTimePicker;
         private MilkWorkDataSetTableAdapters.TableAdapterManager tableAdapterManager;
@@ -510,7 +524,6 @@
         private DevExpress.XtraMap.InformationLayer informationLayer1;
         private DevExpress.XtraMap.BingRouteDataProvider bingRouteDataProvider1;
         private System.Windows.Forms.GroupBox routeStructGroupBox;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox shopComboBox;
         private System.Windows.Forms.Button removePointButton;
         private System.Windows.Forms.Button addPointButton;
@@ -518,5 +531,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Shop_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn routenameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn routedateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullCar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Car_type_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn routedistanceDataGridViewTextBoxColumn;
     }
 }

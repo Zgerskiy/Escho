@@ -32,36 +32,53 @@
             System.Windows.Forms.Label model_nameLabel;
             System.Windows.Forms.Label mark_nameLabel;
             this.modelGroupBox = new System.Windows.Forms.GroupBox();
+            this.model_nameTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.modelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.milkWorkDataSet = new Route.MilkWorkDataSet();
+            this.mark_nameComboBox = new System.Windows.Forms.ComboBox();
+            this.markBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.modelsDataGridView = new System.Windows.Forms.DataGridView();
-            this.modelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.milkWorkDataSet = new Route.MilkWorkDataSet();
-            this.addButton = new System.Windows.Forms.Button();
-            this.markBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.markTableAdapter = new Route.MilkWorkDataSetTableAdapters.MarkTableAdapter();
-            this.modelTableAdapter = new Route.MilkWorkDataSetTableAdapters.ModelTableAdapter();
             this.modelnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marknameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addButton = new System.Windows.Forms.Button();
+            this.markTableAdapter = new Route.MilkWorkDataSetTableAdapters.MarkTableAdapter();
+            this.modelTableAdapter = new Route.MilkWorkDataSetTableAdapters.ModelTableAdapter();
             this.tableAdapterManager = new Route.MilkWorkDataSetTableAdapters.TableAdapterManager();
-            this.model_nameTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.mark_nameComboBox = new System.Windows.Forms.ComboBox();
             model_nameLabel = new System.Windows.Forms.Label();
             mark_nameLabel = new System.Windows.Forms.Label();
             this.modelGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.modelsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.model_nameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.markBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.model_nameTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelsDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // model_nameLabel
+            // 
+            model_nameLabel.AutoSize = true;
+            model_nameLabel.Location = new System.Drawing.Point(7, 16);
+            model_nameLabel.Name = "model_nameLabel";
+            model_nameLabel.Size = new System.Drawing.Size(49, 13);
+            model_nameLabel.TabIndex = 5;
+            model_nameLabel.Text = "Модель:";
+            // 
+            // mark_nameLabel
+            // 
+            mark_nameLabel.AutoSize = true;
+            mark_nameLabel.Location = new System.Drawing.Point(6, 54);
+            mark_nameLabel.Name = "mark_nameLabel";
+            mark_nameLabel.Size = new System.Drawing.Size(43, 13);
+            mark_nameLabel.TabIndex = 7;
+            mark_nameLabel.Text = "Марка:";
             // 
             // modelGroupBox
             // 
-            this.modelGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.modelGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.modelGroupBox.Controls.Add(model_nameLabel);
             this.modelGroupBox.Controls.Add(this.model_nameTextEdit);
@@ -71,11 +88,48 @@
             this.modelGroupBox.Controls.Add(this.saveButton);
             this.modelGroupBox.Enabled = false;
             this.modelGroupBox.Location = new System.Drawing.Point(12, 286);
+            this.modelGroupBox.MinimumSize = new System.Drawing.Size(221, 124);
             this.modelGroupBox.Name = "modelGroupBox";
-            this.modelGroupBox.Size = new System.Drawing.Size(776, 124);
+            this.modelGroupBox.Size = new System.Drawing.Size(221, 124);
             this.modelGroupBox.TabIndex = 9;
             this.modelGroupBox.TabStop = false;
             this.modelGroupBox.Text = "Информация о модели";
+            // 
+            // model_nameTextEdit
+            // 
+            this.model_nameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.modelBindingSource, "Model_name", true));
+            this.model_nameTextEdit.Location = new System.Drawing.Point(6, 32);
+            this.model_nameTextEdit.Name = "model_nameTextEdit";
+            this.model_nameTextEdit.Size = new System.Drawing.Size(209, 20);
+            this.model_nameTextEdit.TabIndex = 6;
+            // 
+            // modelBindingSource
+            // 
+            this.modelBindingSource.DataMember = "Model";
+            this.modelBindingSource.DataSource = this.milkWorkDataSet;
+            // 
+            // milkWorkDataSet
+            // 
+            this.milkWorkDataSet.DataSetName = "MilkWorkDataSet";
+            this.milkWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // mark_nameComboBox
+            // 
+            this.mark_nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.modelBindingSource, "Id_mark", true));
+            this.mark_nameComboBox.DataSource = this.markBindingSource;
+            this.mark_nameComboBox.DisplayMember = "Mark_name";
+            this.mark_nameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mark_nameComboBox.FormattingEnabled = true;
+            this.mark_nameComboBox.Location = new System.Drawing.Point(6, 70);
+            this.mark_nameComboBox.Name = "mark_nameComboBox";
+            this.mark_nameComboBox.Size = new System.Drawing.Size(209, 21);
+            this.mark_nameComboBox.TabIndex = 8;
+            this.mark_nameComboBox.ValueMember = "Id_mark";
+            // 
+            // markBindingSource
+            // 
+            this.markBindingSource.DataMember = "Mark";
+            this.markBindingSource.DataSource = this.milkWorkDataSet;
             // 
             // cancelButton
             // 
@@ -121,7 +175,8 @@
             // 
             this.modelsDataGridView.AllowUserToAddRows = false;
             this.modelsDataGridView.AllowUserToDeleteRows = false;
-            this.modelsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.modelsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.modelsDataGridView.AutoGenerateColumns = false;
             this.modelsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -135,41 +190,8 @@
             this.modelsDataGridView.ReadOnly = true;
             this.modelsDataGridView.RowHeadersVisible = false;
             this.modelsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.modelsDataGridView.Size = new System.Drawing.Size(776, 239);
+            this.modelsDataGridView.Size = new System.Drawing.Size(436, 239);
             this.modelsDataGridView.TabIndex = 6;
-            // 
-            // modelBindingSource
-            // 
-            this.modelBindingSource.DataMember = "Model";
-            this.modelBindingSource.DataSource = this.milkWorkDataSet;
-            // 
-            // milkWorkDataSet
-            // 
-            this.milkWorkDataSet.DataSetName = "MilkWorkDataSet";
-            this.milkWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // addButton
-            // 
-            this.addButton.Location = new System.Drawing.Point(12, 12);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
-            this.addButton.TabIndex = 5;
-            this.addButton.Text = "Добавить";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
-            // 
-            // markBindingSource
-            // 
-            this.markBindingSource.DataMember = "Mark";
-            this.markBindingSource.DataSource = this.milkWorkDataSet;
-            // 
-            // markTableAdapter
-            // 
-            this.markTableAdapter.ClearBeforeFill = true;
-            // 
-            // modelTableAdapter
-            // 
-            this.modelTableAdapter.ClearBeforeFill = true;
             // 
             // modelnameDataGridViewTextBoxColumn
             // 
@@ -184,6 +206,24 @@
             this.marknameDataGridViewTextBoxColumn.HeaderText = "Марка";
             this.marknameDataGridViewTextBoxColumn.Name = "marknameDataGridViewTextBoxColumn";
             this.marknameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addButton
+            // 
+            this.addButton.Location = new System.Drawing.Point(12, 12);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 5;
+            this.addButton.Text = "Добавить";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // markTableAdapter
+            // 
+            this.markTableAdapter.ClearBeforeFill = true;
+            // 
+            // modelTableAdapter
+            // 
+            this.modelTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
@@ -213,64 +253,27 @@
             this.tableAdapterManager.UnitTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Route.MilkWorkDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // model_nameLabel
-            // 
-            model_nameLabel.AutoSize = true;
-            model_nameLabel.Location = new System.Drawing.Point(7, 16);
-            model_nameLabel.Name = "model_nameLabel";
-            model_nameLabel.Size = new System.Drawing.Size(49, 13);
-            model_nameLabel.TabIndex = 5;
-            model_nameLabel.Text = "Модель:";
-            // 
-            // model_nameTextEdit
-            // 
-            this.model_nameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.modelBindingSource, "Model_name", true));
-            this.model_nameTextEdit.Location = new System.Drawing.Point(6, 32);
-            this.model_nameTextEdit.Name = "model_nameTextEdit";
-            this.model_nameTextEdit.Size = new System.Drawing.Size(212, 20);
-            this.model_nameTextEdit.TabIndex = 6;
-            // 
-            // mark_nameLabel
-            // 
-            mark_nameLabel.AutoSize = true;
-            mark_nameLabel.Location = new System.Drawing.Point(6, 54);
-            mark_nameLabel.Name = "mark_nameLabel";
-            mark_nameLabel.Size = new System.Drawing.Size(43, 13);
-            mark_nameLabel.TabIndex = 7;
-            mark_nameLabel.Text = "Марка:";
-            // 
-            // mark_nameComboBox
-            // 
-            this.mark_nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.modelBindingSource, "Id_mark", true));
-            this.mark_nameComboBox.DataSource = this.markBindingSource;
-            this.mark_nameComboBox.DisplayMember = "Mark_name";
-            this.mark_nameComboBox.FormattingEnabled = true;
-            this.mark_nameComboBox.Location = new System.Drawing.Point(6, 70);
-            this.mark_nameComboBox.Name = "mark_nameComboBox";
-            this.mark_nameComboBox.Size = new System.Drawing.Size(212, 21);
-            this.mark_nameComboBox.TabIndex = 8;
-            this.mark_nameComboBox.ValueMember = "Id_mark";
-            // 
             // ModelsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 422);
+            this.ClientSize = new System.Drawing.Size(460, 422);
             this.Controls.Add(this.modelGroupBox);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.modelsDataGridView);
             this.Controls.Add(this.addButton);
+            this.MinimumSize = new System.Drawing.Size(470, 460);
             this.Name = "ModelsForm";
-            this.Text = "ModelsForm";
+            this.Text = "Справочник моделей";
             this.Load += new System.EventHandler(this.ModelsForm_Load);
             this.modelGroupBox.ResumeLayout(false);
             this.modelGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.modelsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.model_nameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.markBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.model_nameTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -82,6 +82,7 @@ namespace Route
                 (routeBindingSource.Current as DataRowView)["Route_date"] = route_dateDateTimePicker.Value;
                 routeBindingSource.EndEdit();
                 routeTableAdapter.Update(milkWorkDataSet.Route);
+                routeTableAdapter.Fill(milkWorkDataSet.Route);
                 routeGroupBox.Enabled = false;
                 routeStructGroupBox.Enabled = true;
             });

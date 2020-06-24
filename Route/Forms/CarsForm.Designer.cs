@@ -43,20 +43,20 @@
             this.carViewTableAdapter = new Route.MilkWorkDataSetTableAdapters.CarViewTableAdapter();
             this.carGroupBox = new System.Windows.Forms.GroupBox();
             this.modelNameComboBox = new System.Windows.Forms.ComboBox();
-            this.markBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.modelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.car_numberTextBox = new System.Windows.Forms.TextBox();
             this.car_type_nameComboBox = new System.Windows.Forms.ComboBox();
             this.cartypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mark_nameComboBox = new System.Windows.Forms.ComboBox();
+            this.markBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new Route.MilkWorkDataSetTableAdapters.TableAdapterManager();
             this.car_typeTableAdapter = new Route.MilkWorkDataSetTableAdapters.Car_typeTableAdapter();
             this.markTableAdapter = new Route.MilkWorkDataSetTableAdapters.MarkTableAdapter();
             this.addButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
-            this.modelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.modelTableAdapter = new Route.MilkWorkDataSetTableAdapters.ModelTableAdapter();
             car_numberLabel = new System.Windows.Forms.Label();
             car_type_nameLabel = new System.Windows.Forms.Label();
@@ -66,9 +66,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.carViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).BeginInit();
             this.carGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.markBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.markBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // car_numberLabel
@@ -111,7 +111,8 @@
             // 
             this.carsDataGridView.AllowUserToAddRows = false;
             this.carsDataGridView.AllowUserToDeleteRows = false;
-            this.carsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.carsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.carsDataGridView.AutoGenerateColumns = false;
             this.carsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -128,7 +129,7 @@
             this.carsDataGridView.RowHeadersVisible = false;
             this.carsDataGridView.RowHeadersWidth = 20;
             this.carsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.carsDataGridView.Size = new System.Drawing.Size(776, 222);
+            this.carsDataGridView.Size = new System.Drawing.Size(775, 222);
             this.carsDataGridView.TabIndex = 0;
             this.carsDataGridView.SelectionChanged += new System.EventHandler(this.carsDataGridView_SelectionChanged);
             // 
@@ -176,6 +177,8 @@
             // 
             // carGroupBox
             // 
+            this.carGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.carGroupBox.Controls.Add(model_nameLabel);
             this.carGroupBox.Controls.Add(this.modelNameComboBox);
             this.carGroupBox.Controls.Add(this.cancelButton);
@@ -188,8 +191,10 @@
             this.carGroupBox.Controls.Add(this.mark_nameComboBox);
             this.carGroupBox.Enabled = false;
             this.carGroupBox.Location = new System.Drawing.Point(12, 264);
+            this.carGroupBox.MaximumSize = new System.Drawing.Size(522, 128);
+            this.carGroupBox.MinimumSize = new System.Drawing.Size(522, 128);
             this.carGroupBox.Name = "carGroupBox";
-            this.carGroupBox.Size = new System.Drawing.Size(776, 174);
+            this.carGroupBox.Size = new System.Drawing.Size(522, 128);
             this.carGroupBox.TabIndex = 1;
             this.carGroupBox.TabStop = false;
             this.carGroupBox.Text = "Информация об авто";
@@ -200,22 +205,22 @@
             this.modelNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.carViewBindingSource, "Id_model", true));
             this.modelNameComboBox.DataSource = this.modelBindingSource;
             this.modelNameComboBox.DisplayMember = "Model_name";
+            this.modelNameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.modelNameComboBox.FormattingEnabled = true;
             this.modelNameComboBox.Location = new System.Drawing.Point(272, 71);
             this.modelNameComboBox.Name = "modelNameComboBox";
             this.modelNameComboBox.Size = new System.Drawing.Size(239, 21);
             this.modelNameComboBox.TabIndex = 9;
             this.modelNameComboBox.ValueMember = "Id_model";
-            this.modelNameComboBox.SelectionChangeCommitted += new System.EventHandler(this.modelNameComboBox_SelectionChangeCommitted);
             // 
-            // markBindingSource
+            // modelBindingSource
             // 
-            this.markBindingSource.DataMember = "Mark";
-            this.markBindingSource.DataSource = this.milkWorkDataSet;
+            this.modelBindingSource.DataMember = "Model";
+            this.modelBindingSource.DataSource = this.milkWorkDataSet;
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(95, 138);
+            this.cancelButton.Location = new System.Drawing.Point(95, 98);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 7;
@@ -225,7 +230,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(14, 138);
+            this.saveButton.Location = new System.Drawing.Point(14, 98);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 6;
@@ -246,6 +251,7 @@
             this.car_type_nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.carViewBindingSource, "Id_car_type", true));
             this.car_type_nameComboBox.DataSource = this.cartypeBindingSource;
             this.car_type_nameComboBox.DisplayMember = "Car_type_name";
+            this.car_type_nameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.car_type_nameComboBox.FormattingEnabled = true;
             this.car_type_nameComboBox.Location = new System.Drawing.Point(14, 71);
             this.car_type_nameComboBox.Name = "car_type_nameComboBox";
@@ -264,6 +270,7 @@
             this.mark_nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.carViewBindingSource, "Id_mark", true));
             this.mark_nameComboBox.DataSource = this.markBindingSource;
             this.mark_nameComboBox.DisplayMember = "Mark_name";
+            this.mark_nameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mark_nameComboBox.FormattingEnabled = true;
             this.mark_nameComboBox.Location = new System.Drawing.Point(272, 31);
             this.mark_nameComboBox.Name = "mark_nameComboBox";
@@ -271,6 +278,11 @@
             this.mark_nameComboBox.TabIndex = 5;
             this.mark_nameComboBox.ValueMember = "Id_mark";
             this.mark_nameComboBox.SelectionChangeCommitted += new System.EventHandler(this.mark_nameComboBox_SelectionChangeCommitted);
+            // 
+            // markBindingSource
+            // 
+            this.markBindingSource.DataMember = "Mark";
+            this.markBindingSource.DataSource = this.milkWorkDataSet;
             // 
             // tableAdapterManager
             // 
@@ -288,10 +300,12 @@
             this.tableAdapterManager.ProductViewTableAdapter = null;
             this.tableAdapterManager.RegionTableAdapter = null;
             this.tableAdapterManager.Request_structTableAdapter = null;
+            this.tableAdapterManager.RequestStructViewTableAdapter = null;
             this.tableAdapterManager.Route_structTableAdapter = null;
             this.tableAdapterManager.Route_structViewTableAdapter = null;
             this.tableAdapterManager.RouteTableAdapter = null;
             this.tableAdapterManager.Shop_requestTableAdapter = null;
+            this.tableAdapterManager.ShopRequestViewTableAdapter = null;
             this.tableAdapterManager.ShopTableAdapter = null;
             this.tableAdapterManager.ShopViewTableAdapter = null;
             this.tableAdapterManager.StreetTableAdapter = null;
@@ -336,11 +350,6 @@
             this.removeButton.UseVisualStyleBackColor = true;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
-            // modelBindingSource
-            // 
-            this.modelBindingSource.DataMember = "Model";
-            this.modelBindingSource.DataSource = this.milkWorkDataSet;
-            // 
             // modelTableAdapter
             // 
             this.modelTableAdapter.ClearBeforeFill = true;
@@ -349,12 +358,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(799, 391);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.carGroupBox);
             this.Controls.Add(this.carsDataGridView);
+            this.MinimumSize = new System.Drawing.Size(770, 430);
             this.Name = "CarsForm";
             this.Text = "Справочник авто";
             this.Load += new System.EventHandler(this.CarsForm_Load);
@@ -363,9 +373,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).EndInit();
             this.carGroupBox.ResumeLayout(false);
             this.carGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.markBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.markBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

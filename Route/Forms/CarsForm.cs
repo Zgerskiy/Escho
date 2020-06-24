@@ -75,18 +75,14 @@ namespace Route
 
             modelTableAdapter.FillByMark(milkWorkDataSet.Model, idMark);
         }
-
-        private void modelNameComboBox_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void carsDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             if (cartypeBindingSource.Count == 0 || carViewBindingSource.Current == null)
                 return;
 
-            int? idMark = (int)(carViewBindingSource.Current as DataRowView)["Id_mark"];
+            int? idMark = (carViewBindingSource.Current as DataRowView)["Id_mark"] as int?;
 
             if (idMark != null)
             {

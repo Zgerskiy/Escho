@@ -77,8 +77,7 @@
             // 
             // areaGroupBox
             // 
-            this.areaGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.areaGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.areaGroupBox.Controls.Add(area_nameLabel);
             this.areaGroupBox.Controls.Add(this.area_nameTextBox);
@@ -87,9 +86,11 @@
             this.areaGroupBox.Controls.Add(this.cancelButton);
             this.areaGroupBox.Controls.Add(this.saveButton);
             this.areaGroupBox.Enabled = false;
-            this.areaGroupBox.Location = new System.Drawing.Point(12, 284);
+            this.areaGroupBox.Location = new System.Drawing.Point(12, 301);
+            this.areaGroupBox.MaximumSize = new System.Drawing.Size(259, 129);
+            this.areaGroupBox.MinimumSize = new System.Drawing.Size(259, 129);
             this.areaGroupBox.Name = "areaGroupBox";
-            this.areaGroupBox.Size = new System.Drawing.Size(776, 146);
+            this.areaGroupBox.Size = new System.Drawing.Size(259, 129);
             this.areaGroupBox.TabIndex = 19;
             this.areaGroupBox.TabStop = false;
             this.areaGroupBox.Text = "Информация об области";
@@ -117,6 +118,7 @@
             this.id_regionComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.areaBindingSource, "Id_region", true));
             this.id_regionComboBox.DataSource = this.regionBindingSource;
             this.id_regionComboBox.DisplayMember = "Region_name";
+            this.id_regionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.id_regionComboBox.FormattingEnabled = true;
             this.id_regionComboBox.Location = new System.Drawing.Point(9, 32);
             this.id_regionComboBox.Name = "id_regionComboBox";
@@ -173,7 +175,8 @@
             // 
             this.areasDataGridView.AllowUserToAddRows = false;
             this.areasDataGridView.AllowUserToDeleteRows = false;
-            this.areasDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.areasDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.areasDataGridView.AutoGenerateColumns = false;
             this.areasDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -187,7 +190,7 @@
             this.areasDataGridView.ReadOnly = true;
             this.areasDataGridView.RowHeadersVisible = false;
             this.areasDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.areasDataGridView.Size = new System.Drawing.Size(776, 239);
+            this.areasDataGridView.Size = new System.Drawing.Size(460, 256);
             this.areasDataGridView.TabIndex = 16;
             // 
             // areanameDataGridViewTextBoxColumn
@@ -254,14 +257,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 442);
+            this.ClientSize = new System.Drawing.Size(484, 431);
             this.Controls.Add(this.areaGroupBox);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.areasDataGridView);
             this.Controls.Add(this.addButton);
+            this.MinimumSize = new System.Drawing.Size(500, 470);
             this.Name = "AreasForm";
-            this.Text = "AreasForm";
+            this.Text = "Справочник районов";
             this.Load += new System.EventHandler(this.AreasForm_Load);
             this.areaGroupBox.ResumeLayout(false);
             this.areaGroupBox.PerformLayout();

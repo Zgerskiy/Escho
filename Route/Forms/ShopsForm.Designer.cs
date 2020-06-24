@@ -40,6 +40,8 @@
             this.shopViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.milkWorkDataSet = new Route.MilkWorkDataSet();
             this.shopInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.streetComboBox = new System.Windows.Forms.ComboBox();
+            this.streetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.regionComboBox = new System.Windows.Forms.ComboBox();
             this.regionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.areaComboBox = new System.Windows.Forms.ComboBox();
@@ -54,7 +56,6 @@
             this.vectorItemsLayer1 = new DevExpress.XtraMap.VectorItemsLayer();
             this.mapItemStorage1 = new DevExpress.XtraMap.MapItemStorage();
             this.shop_nameTextBox = new System.Windows.Forms.TextBox();
-            this.streetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.addButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
@@ -64,7 +65,6 @@
             this.regionTableAdapter = new Route.MilkWorkDataSetTableAdapters.RegionTableAdapter();
             this.areaTableAdapter = new Route.MilkWorkDataSetTableAdapters.AreaTableAdapter();
             this.localityViewTableAdapter = new Route.MilkWorkDataSetTableAdapters.LocalityViewTableAdapter();
-            this.streetComboBox = new System.Windows.Forms.ComboBox();
             shop_nameLabel = new System.Windows.Forms.Label();
             addressLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -74,11 +74,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.shopViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).BeginInit();
             this.shopInfoGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.streetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.regionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.areaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.localityViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.streetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // shop_nameLabel
@@ -139,7 +139,7 @@
             this.shopnameDataGridViewTextBoxColumn,
             this.addressDataGridViewTextBoxColumn});
             this.shopsDataGridView.DataSource = this.shopViewBindingSource;
-            this.shopsDataGridView.Location = new System.Drawing.Point(12, 56);
+            this.shopsDataGridView.Location = new System.Drawing.Point(12, 41);
             this.shopsDataGridView.Name = "shopsDataGridView";
             this.shopsDataGridView.ReadOnly = true;
             this.shopsDataGridView.RowHeadersVisible = false;
@@ -175,6 +175,9 @@
             // 
             // shopInfoGroupBox
             // 
+            this.shopInfoGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.shopInfoGroupBox.Controls.Add(this.streetComboBox);
             this.shopInfoGroupBox.Controls.Add(label3);
             this.shopInfoGroupBox.Controls.Add(this.regionComboBox);
@@ -189,18 +192,38 @@
             this.shopInfoGroupBox.Controls.Add(this.shop_nameTextBox);
             this.shopInfoGroupBox.Controls.Add(addressLabel);
             this.shopInfoGroupBox.Enabled = false;
-            this.shopInfoGroupBox.Location = new System.Drawing.Point(12, 268);
+            this.shopInfoGroupBox.Location = new System.Drawing.Point(12, 253);
+            this.shopInfoGroupBox.MinimumSize = new System.Drawing.Size(820, 257);
             this.shopInfoGroupBox.Name = "shopInfoGroupBox";
-            this.shopInfoGroupBox.Size = new System.Drawing.Size(820, 257);
+            this.shopInfoGroupBox.Size = new System.Drawing.Size(820, 281);
             this.shopInfoGroupBox.TabIndex = 1;
             this.shopInfoGroupBox.TabStop = false;
             this.shopInfoGroupBox.Text = "Информация о магазине";
+            // 
+            // streetComboBox
+            // 
+            this.streetComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.shopViewBindingSource, "Id_street", true));
+            this.streetComboBox.DataSource = this.streetBindingSource;
+            this.streetComboBox.DisplayMember = "Street_name";
+            this.streetComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.streetComboBox.FormattingEnabled = true;
+            this.streetComboBox.Location = new System.Drawing.Point(6, 199);
+            this.streetComboBox.Name = "streetComboBox";
+            this.streetComboBox.Size = new System.Drawing.Size(231, 21);
+            this.streetComboBox.TabIndex = 13;
+            this.streetComboBox.ValueMember = "Id_street";
+            // 
+            // streetBindingSource
+            // 
+            this.streetBindingSource.DataMember = "Street";
+            this.streetBindingSource.DataSource = this.milkWorkDataSet;
             // 
             // regionComboBox
             // 
             this.regionComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.shopViewBindingSource, "Id_region", true));
             this.regionComboBox.DataSource = this.regionBindingSource;
             this.regionComboBox.DisplayMember = "Region_name";
+            this.regionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.regionComboBox.FormattingEnabled = true;
             this.regionComboBox.Location = new System.Drawing.Point(6, 79);
             this.regionComboBox.Name = "regionComboBox";
@@ -219,6 +242,7 @@
             this.areaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.shopViewBindingSource, "Id_area", true));
             this.areaComboBox.DataSource = this.areaBindingSource;
             this.areaComboBox.DisplayMember = "Area_name";
+            this.areaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.areaComboBox.FormattingEnabled = true;
             this.areaComboBox.Location = new System.Drawing.Point(6, 119);
             this.areaComboBox.Name = "areaComboBox";
@@ -237,6 +261,7 @@
             this.LocalityComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.shopViewBindingSource, "Id_locality", true));
             this.LocalityComboBox.DataSource = this.localityViewBindingSource;
             this.LocalityComboBox.DisplayMember = "Locality_name";
+            this.LocalityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.LocalityComboBox.FormattingEnabled = true;
             this.LocalityComboBox.Location = new System.Drawing.Point(6, 159);
             this.LocalityComboBox.Name = "LocalityComboBox";
@@ -272,12 +297,15 @@
             // 
             // mapControl1
             // 
+            this.mapControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mapControl1.Layers.Add(this.imageLayer1);
             this.mapControl1.Layers.Add(this.vectorItemsLayer1);
-            this.mapControl1.Location = new System.Drawing.Point(414, 7);
+            this.mapControl1.Location = new System.Drawing.Point(243, 7);
             this.mapControl1.Name = "mapControl1";
             this.mapControl1.NavigationPanelOptions.Visible = false;
-            this.mapControl1.Size = new System.Drawing.Size(400, 244);
+            this.mapControl1.Size = new System.Drawing.Size(571, 268);
             this.mapControl1.TabIndex = 4;
             this.mapControl1.DoubleClick += new System.EventHandler(this.mapControl1_DoubleClick);
             this.imageLayer1.DataProvider = this.bingMapDataProvider1;
@@ -292,11 +320,6 @@
             this.shop_nameTextBox.Name = "shop_nameTextBox";
             this.shop_nameTextBox.Size = new System.Drawing.Size(231, 20);
             this.shop_nameTextBox.TabIndex = 1;
-            // 
-            // streetBindingSource
-            // 
-            this.streetBindingSource.DataMember = "Street";
-            this.streetBindingSource.DataSource = this.milkWorkDataSet;
             // 
             // addButton
             // 
@@ -338,16 +361,22 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.Car_typeTableAdapter = null;
             this.tableAdapterManager.CarTableAdapter = null;
+            this.tableAdapterManager.CarViewTableAdapter = null;
             this.tableAdapterManager.Locality_typeTableAdapter = null;
             this.tableAdapterManager.LocalityTableAdapter = null;
             this.tableAdapterManager.MarkTableAdapter = null;
+            this.tableAdapterManager.ModelTableAdapter = null;
             this.tableAdapterManager.Product_typeTableAdapter = null;
             this.tableAdapterManager.ProductTableAdapter = null;
+            this.tableAdapterManager.ProductViewTableAdapter = null;
             this.tableAdapterManager.RegionTableAdapter = null;
             this.tableAdapterManager.Request_structTableAdapter = null;
+            this.tableAdapterManager.RequestStructViewTableAdapter = null;
             this.tableAdapterManager.Route_structTableAdapter = null;
+            this.tableAdapterManager.Route_structViewTableAdapter = null;
             this.tableAdapterManager.RouteTableAdapter = null;
             this.tableAdapterManager.Shop_requestTableAdapter = null;
+            this.tableAdapterManager.ShopRequestViewTableAdapter = null;
             this.tableAdapterManager.ShopTableAdapter = null;
             this.tableAdapterManager.ShopViewTableAdapter = this.shopViewTableAdapter;
             this.tableAdapterManager.StreetTableAdapter = this.streetTableAdapter;
@@ -370,18 +399,6 @@
             // 
             this.localityViewTableAdapter.ClearBeforeFill = true;
             // 
-            // streetComboBox
-            // 
-            this.streetComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.shopViewBindingSource, "Id_street", true));
-            this.streetComboBox.DataSource = this.streetBindingSource;
-            this.streetComboBox.DisplayMember = "Street_name";
-            this.streetComboBox.FormattingEnabled = true;
-            this.streetComboBox.Location = new System.Drawing.Point(6, 199);
-            this.streetComboBox.Name = "streetComboBox";
-            this.streetComboBox.Size = new System.Drawing.Size(231, 21);
-            this.streetComboBox.TabIndex = 13;
-            this.streetComboBox.ValueMember = "Id_street";
-            // 
             // ShopsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,6 +409,7 @@
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.shopInfoGroupBox);
             this.Controls.Add(this.shopsDataGridView);
+            this.MinimumSize = new System.Drawing.Size(860, 576);
             this.Name = "ShopsForm";
             this.Text = "Справочник магазинов";
             this.Load += new System.EventHandler(this.ShopsForm_Load);
@@ -400,11 +418,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).EndInit();
             this.shopInfoGroupBox.ResumeLayout(false);
             this.shopInfoGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.streetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.areaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.localityViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.streetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

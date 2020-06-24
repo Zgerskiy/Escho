@@ -31,29 +31,37 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label locality_type_nameLabel;
             this.localityTypeGroupBox = new System.Windows.Forms.GroupBox();
+            this.locality_type_nameTextBox = new System.Windows.Forms.TextBox();
+            this.localitytypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.milkWorkDataSet = new Route.MilkWorkDataSet();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.marksDataGridView = new System.Windows.Forms.DataGridView();
             this.localitytypenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.localitytypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.milkWorkDataSet = new Route.MilkWorkDataSet();
             this.addButton = new System.Windows.Forms.Button();
             this.locality_typeTableAdapter = new Route.MilkWorkDataSetTableAdapters.Locality_typeTableAdapter();
             this.tableAdapterManager = new Route.MilkWorkDataSetTableAdapters.TableAdapterManager();
-            this.locality_type_nameTextBox = new System.Windows.Forms.TextBox();
             locality_type_nameLabel = new System.Windows.Forms.Label();
             this.localityTypeGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.marksDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.localitytypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marksDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // locality_type_nameLabel
+            // 
+            locality_type_nameLabel.AutoSize = true;
+            locality_type_nameLabel.Location = new System.Drawing.Point(6, 16);
+            locality_type_nameLabel.Name = "locality_type_nameLabel";
+            locality_type_nameLabel.Size = new System.Drawing.Size(134, 13);
+            locality_type_nameLabel.TabIndex = 5;
+            locality_type_nameLabel.Text = "Тип населенного пункта:";
             // 
             // localityTypeGroupBox
             // 
-            this.localityTypeGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.localityTypeGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.localityTypeGroupBox.Controls.Add(locality_type_nameLabel);
             this.localityTypeGroupBox.Controls.Add(this.locality_type_nameTextBox);
@@ -61,11 +69,33 @@
             this.localityTypeGroupBox.Controls.Add(this.saveButton);
             this.localityTypeGroupBox.Enabled = false;
             this.localityTypeGroupBox.Location = new System.Drawing.Point(12, 281);
+            this.localityTypeGroupBox.MaximumSize = new System.Drawing.Size(247, 87);
+            this.localityTypeGroupBox.MinimumSize = new System.Drawing.Size(247, 87);
             this.localityTypeGroupBox.Name = "localityTypeGroupBox";
-            this.localityTypeGroupBox.Size = new System.Drawing.Size(395, 101);
+            this.localityTypeGroupBox.Size = new System.Drawing.Size(247, 87);
             this.localityTypeGroupBox.TabIndex = 9;
             this.localityTypeGroupBox.TabStop = false;
             this.localityTypeGroupBox.Text = "Информация о типе населенного пункта";
+            // 
+            // locality_type_nameTextBox
+            // 
+            this.locality_type_nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.locality_type_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.localitytypeBindingSource, "Locality_type_name", true));
+            this.locality_type_nameTextBox.Location = new System.Drawing.Point(9, 32);
+            this.locality_type_nameTextBox.Name = "locality_type_nameTextBox";
+            this.locality_type_nameTextBox.Size = new System.Drawing.Size(232, 20);
+            this.locality_type_nameTextBox.TabIndex = 6;
+            // 
+            // localitytypeBindingSource
+            // 
+            this.localitytypeBindingSource.DataMember = "Locality_type";
+            this.localitytypeBindingSource.DataSource = this.milkWorkDataSet;
+            // 
+            // milkWorkDataSet
+            // 
+            this.milkWorkDataSet.DataSetName = "MilkWorkDataSet";
+            this.milkWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cancelButton
             // 
@@ -111,7 +141,8 @@
             // 
             this.marksDataGridView.AllowUserToAddRows = false;
             this.marksDataGridView.AllowUserToDeleteRows = false;
-            this.marksDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.marksDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.marksDataGridView.AutoGenerateColumns = false;
             this.marksDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -124,7 +155,7 @@
             this.marksDataGridView.ReadOnly = true;
             this.marksDataGridView.RowHeadersVisible = false;
             this.marksDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.marksDataGridView.Size = new System.Drawing.Size(395, 239);
+            this.marksDataGridView.Size = new System.Drawing.Size(590, 239);
             this.marksDataGridView.TabIndex = 6;
             // 
             // localitytypenameDataGridViewTextBoxColumn
@@ -133,16 +164,6 @@
             this.localitytypenameDataGridViewTextBoxColumn.HeaderText = "Тип нас. пункта";
             this.localitytypenameDataGridViewTextBoxColumn.Name = "localitytypenameDataGridViewTextBoxColumn";
             this.localitytypenameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // localitytypeBindingSource
-            // 
-            this.localitytypeBindingSource.DataMember = "Locality_type";
-            this.localitytypeBindingSource.DataSource = this.milkWorkDataSet;
-            // 
-            // milkWorkDataSet
-            // 
-            this.milkWorkDataSet.DataSetName = "MilkWorkDataSet";
-            this.milkWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // addButton
             // 
@@ -186,43 +207,25 @@
             this.tableAdapterManager.UnitTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Route.MilkWorkDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // locality_type_nameLabel
-            // 
-            locality_type_nameLabel.AutoSize = true;
-            locality_type_nameLabel.Location = new System.Drawing.Point(6, 16);
-            locality_type_nameLabel.Name = "locality_type_nameLabel";
-            locality_type_nameLabel.Size = new System.Drawing.Size(134, 13);
-            locality_type_nameLabel.TabIndex = 5;
-            locality_type_nameLabel.Text = "Тип населенного пункта:";
-            // 
-            // locality_type_nameTextBox
-            // 
-            this.locality_type_nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.locality_type_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.localitytypeBindingSource, "Locality_type_name", true));
-            this.locality_type_nameTextBox.Location = new System.Drawing.Point(6, 32);
-            this.locality_type_nameTextBox.Name = "locality_type_nameTextBox";
-            this.locality_type_nameTextBox.Size = new System.Drawing.Size(383, 20);
-            this.locality_type_nameTextBox.TabIndex = 6;
-            // 
             // LocalityTypesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 394);
+            this.ClientSize = new System.Drawing.Size(614, 371);
             this.Controls.Add(this.localityTypeGroupBox);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.marksDataGridView);
             this.Controls.Add(this.addButton);
+            this.MinimumSize = new System.Drawing.Size(630, 410);
             this.Name = "LocalityTypesForm";
-            this.Text = "LocalityTypesForm";
+            this.Text = "Справочник типов населенных пунктов";
             this.Load += new System.EventHandler(this.LocalityTypesForm_Load);
             this.localityTypeGroupBox.ResumeLayout(false);
             this.localityTypeGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.marksDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.localitytypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.milkWorkDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marksDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }

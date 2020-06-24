@@ -42,6 +42,7 @@
             this.areasButton = new System.Windows.Forms.Button();
             this.localitiesButton = new System.Windows.Forms.Button();
             this.streetsButton = new System.Windows.Forms.Button();
+            this.productsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // carsButton
@@ -86,7 +87,7 @@
             // 
             // marksButton
             // 
-            this.marksButton.Location = new System.Drawing.Point(22, 141);
+            this.marksButton.Location = new System.Drawing.Point(22, 176);
             this.marksButton.Name = "marksButton";
             this.marksButton.Size = new System.Drawing.Size(129, 23);
             this.marksButton.TabIndex = 4;
@@ -96,7 +97,7 @@
             // 
             // modelsButton
             // 
-            this.modelsButton.Location = new System.Drawing.Point(22, 170);
+            this.modelsButton.Location = new System.Drawing.Point(22, 205);
             this.modelsButton.Name = "modelsButton";
             this.modelsButton.Size = new System.Drawing.Size(129, 23);
             this.modelsButton.TabIndex = 5;
@@ -106,7 +107,7 @@
             // 
             // carTypesButton
             // 
-            this.carTypesButton.Location = new System.Drawing.Point(22, 213);
+            this.carTypesButton.Location = new System.Drawing.Point(22, 248);
             this.carTypesButton.Name = "carTypesButton";
             this.carTypesButton.Size = new System.Drawing.Size(129, 23);
             this.carTypesButton.TabIndex = 6;
@@ -116,7 +117,7 @@
             // 
             // unitsButton
             // 
-            this.unitsButton.Location = new System.Drawing.Point(22, 257);
+            this.unitsButton.Location = new System.Drawing.Point(22, 292);
             this.unitsButton.Name = "unitsButton";
             this.unitsButton.Size = new System.Drawing.Size(129, 23);
             this.unitsButton.TabIndex = 7;
@@ -126,7 +127,7 @@
             // 
             // prodTypeButtons
             // 
-            this.prodTypeButtons.Location = new System.Drawing.Point(22, 286);
+            this.prodTypeButtons.Location = new System.Drawing.Point(22, 321);
             this.prodTypeButtons.Name = "prodTypeButtons";
             this.prodTypeButtons.Size = new System.Drawing.Size(129, 23);
             this.prodTypeButtons.TabIndex = 8;
@@ -184,11 +185,22 @@
             this.streetsButton.UseVisualStyleBackColor = true;
             this.streetsButton.Click += new System.EventHandler(this.streetsButton_Click);
             // 
+            // productsButton
+            // 
+            this.productsButton.Location = new System.Drawing.Point(22, 128);
+            this.productsButton.Name = "productsButton";
+            this.productsButton.Size = new System.Drawing.Size(129, 23);
+            this.productsButton.TabIndex = 14;
+            this.productsButton.Text = "Продукты";
+            this.productsButton.UseVisualStyleBackColor = true;
+            this.productsButton.Click += new System.EventHandler(this.productsButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.productsButton);
             this.Controls.Add(this.streetsButton);
             this.Controls.Add(this.localitiesButton);
             this.Controls.Add(this.areasButton);
@@ -225,5 +237,6 @@
         private System.Windows.Forms.Button areasButton;
         private System.Windows.Forms.Button localitiesButton;
         private System.Windows.Forms.Button streetsButton;
+        private System.Windows.Forms.Button productsButton;
     }
 }
