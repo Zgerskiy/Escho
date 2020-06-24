@@ -144,7 +144,7 @@ namespace Route
                 areaTableAdapter.FillByRegion(milkWorkDataSet.Area, idRegion.Value);
             }
 
-            int? idArea = (int?)(shopViewBindingSource.Current as DataRowView)["Id_area"] as int?;
+            int? idArea = (shopViewBindingSource.Current as DataRowView)["Id_area"] as int?;
             if(idArea != null)
             {
                 localityViewTableAdapter.FillByArea(milkWorkDataSet.LocalityView, idArea.Value);

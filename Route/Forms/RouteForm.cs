@@ -195,5 +195,11 @@ namespace Route
                 routeTableAdapter.Update(milkWorkDataSet.Route);
             }
         }
+
+        private async void reportButton_Click(object sender, EventArgs e)
+        {
+            RouteReporter routeReporter = new RouteReporter();
+            await routeReporter.Report(milkWorkDataSet.Route);
+        }
     }
 }

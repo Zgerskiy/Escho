@@ -34,6 +34,11 @@
             System.Windows.Forms.Label carLabel;
             System.Windows.Forms.Label label1;
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.routenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.routedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullCar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Car_type_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.routedistanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.routeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.milkWorkDataSet = new Route.MilkWorkDataSet();
             this.addButton = new System.Windows.Forms.Button();
@@ -66,11 +71,7 @@
             this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Shop_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.routenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.routedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FullCar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Car_type_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.routedistanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportButton = new System.Windows.Forms.Button();
             route_nameLabel = new System.Windows.Forms.Label();
             route_dateLabel = new System.Windows.Forms.Label();
             carLabel = new System.Windows.Forms.Label();
@@ -147,6 +148,41 @@
             this.dataGridView1.Size = new System.Drawing.Size(588, 298);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // routenameDataGridViewTextBoxColumn
+            // 
+            this.routenameDataGridViewTextBoxColumn.DataPropertyName = "Route_name";
+            this.routenameDataGridViewTextBoxColumn.HeaderText = "Маршрут";
+            this.routenameDataGridViewTextBoxColumn.Name = "routenameDataGridViewTextBoxColumn";
+            this.routenameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // routedateDataGridViewTextBoxColumn
+            // 
+            this.routedateDataGridViewTextBoxColumn.DataPropertyName = "Route_date";
+            this.routedateDataGridViewTextBoxColumn.HeaderText = "Дата";
+            this.routedateDataGridViewTextBoxColumn.Name = "routedateDataGridViewTextBoxColumn";
+            this.routedateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // FullCar
+            // 
+            this.FullCar.DataPropertyName = "FullCar";
+            this.FullCar.HeaderText = "Автомобиль";
+            this.FullCar.Name = "FullCar";
+            this.FullCar.ReadOnly = true;
+            // 
+            // Car_type_name
+            // 
+            this.Car_type_name.DataPropertyName = "Car_type_name";
+            this.Car_type_name.HeaderText = "Тип авто";
+            this.Car_type_name.Name = "Car_type_name";
+            this.Car_type_name.ReadOnly = true;
+            // 
+            // routedistanceDataGridViewTextBoxColumn
+            // 
+            this.routedistanceDataGridViewTextBoxColumn.DataPropertyName = "Route_distance";
+            this.routedistanceDataGridViewTextBoxColumn.HeaderText = "Длинна маршрута  (км)";
+            this.routedistanceDataGridViewTextBoxColumn.Name = "routedistanceDataGridViewTextBoxColumn";
+            this.routedistanceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // routeBindingSource
             // 
@@ -429,46 +465,22 @@
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
             this.addressDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // routenameDataGridViewTextBoxColumn
+            // reportButton
             // 
-            this.routenameDataGridViewTextBoxColumn.DataPropertyName = "Route_name";
-            this.routenameDataGridViewTextBoxColumn.HeaderText = "Маршрут";
-            this.routenameDataGridViewTextBoxColumn.Name = "routenameDataGridViewTextBoxColumn";
-            this.routenameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // routedateDataGridViewTextBoxColumn
-            // 
-            this.routedateDataGridViewTextBoxColumn.DataPropertyName = "Route_date";
-            this.routedateDataGridViewTextBoxColumn.HeaderText = "Дата";
-            this.routedateDataGridViewTextBoxColumn.Name = "routedateDataGridViewTextBoxColumn";
-            this.routedateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // FullCar
-            // 
-            this.FullCar.DataPropertyName = "FullCar";
-            this.FullCar.HeaderText = "Автомобиль";
-            this.FullCar.Name = "FullCar";
-            this.FullCar.ReadOnly = true;
-            // 
-            // Car_type_name
-            // 
-            this.Car_type_name.DataPropertyName = "Car_type_name";
-            this.Car_type_name.HeaderText = "Тип авто";
-            this.Car_type_name.Name = "Car_type_name";
-            this.Car_type_name.ReadOnly = true;
-            // 
-            // routedistanceDataGridViewTextBoxColumn
-            // 
-            this.routedistanceDataGridViewTextBoxColumn.DataPropertyName = "Route_distance";
-            this.routedistanceDataGridViewTextBoxColumn.HeaderText = "Длинна маршрута  (км)";
-            this.routedistanceDataGridViewTextBoxColumn.Name = "routedistanceDataGridViewTextBoxColumn";
-            this.routedistanceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reportButton.Location = new System.Drawing.Point(269, 12);
+            this.reportButton.Name = "reportButton";
+            this.reportButton.Size = new System.Drawing.Size(117, 23);
+            this.reportButton.TabIndex = 8;
+            this.reportButton.Text = "Вывести в отчет";
+            this.reportButton.UseVisualStyleBackColor = true;
+            this.reportButton.Click += new System.EventHandler(this.reportButton_Click);
             // 
             // RouteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 520);
+            this.Controls.Add(this.reportButton);
             this.Controls.Add(this.routeStructGroupBox);
             this.Controls.Add(this.routeGroupBox);
             this.Controls.Add(this.removeButton);
@@ -536,5 +548,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FullCar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Car_type_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn routedistanceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button reportButton;
     }
 }
