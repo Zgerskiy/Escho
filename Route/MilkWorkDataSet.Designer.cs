@@ -4451,7 +4451,6 @@ namespace Route {
                 this.columnRoute_date.AllowDBNull = false;
                 this.columnRoute_distance.AllowDBNull = false;
                 this.columnId_car.AllowDBNull = false;
-                this.columnCar_type_name.AllowDBNull = false;
                 this.columnCar_type_name.MaxLength = 200;
                 this.columnFullCar.ReadOnly = true;
                 this.columnFullCar.MaxLength = 409;
@@ -9872,7 +9871,12 @@ namespace Route {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Car_type_name {
                 get {
-                    return ((string)(this[this.tableRoute.Car_type_nameColumn]));
+                    try {
+                        return ((string)(this[this.tableRoute.Car_type_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Car_type_name\' в таблице \'Route\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableRoute.Car_type_nameColumn] = value;
@@ -9904,6 +9908,18 @@ namespace Route {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__Route__Id_car__17036CC0"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCar_type_nameNull() {
+                return this.IsNull(this.tableRoute.Car_type_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCar_type_nameNull() {
+                this[this.tableRoute.Car_type_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

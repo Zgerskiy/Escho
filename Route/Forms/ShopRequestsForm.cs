@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Route.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,12 +20,9 @@ namespace Route.Forms
 
         private void ShopRequestsForm_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "milkWorkDataSet.ProductView". При необходимости она может быть перемещена или удалена.
-            this.productViewTableAdapter.Fill(this.milkWorkDataSet.ProductView);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "milkWorkDataSet.RequestStructView". При необходимости она может быть перемещена или удалена.
-            this.requestStructViewTableAdapter.Fill(this.milkWorkDataSet.RequestStructView);
-            ConnectionHandler.HandleConnection(this, () =>
+           ConnectionHandler.HandleConnection(this, () =>
             {
+               this.productViewTableAdapter.Fill(this.milkWorkDataSet.ProductView);
                 this.shopViewTableAdapter.Fill(this.milkWorkDataSet.ShopView);
                 this.shopRequestViewTableAdapter.Fill(this.milkWorkDataSet.ShopRequestView);
             });
@@ -55,10 +53,14 @@ namespace Route.Forms
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            shopRequestViewBindingSource.EndEdit();
-            shopRequestViewTableAdapter.Update(milkWorkDataSet.ShopRequestView);
-            shopRequestViewTableAdapter.Fill(milkWorkDataSet.ShopRequestView);
-            shopRequestGroupBox.Enabled = false;
+            AddingHandler.Handle(this, () =>
+            {
+                (shopRequestViewBindingSource.Current as DataRowView)["Date_of_request"] = date_of_requestDateTimePicker.Value;
+                shopRequestViewBindingSource.EndEdit();
+                shopRequestViewTableAdapter.Update(milkWorkDataSet.ShopRequestView);
+                shopRequestViewTableAdapter.Fill(milkWorkDataSet.ShopRequestView);
+                shopRequestGroupBox.Enabled = false;
+            });
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -106,21 +108,30 @@ namespace Route.Forms
 
         private void saveRequestButton_Click(object sender, EventArgs e)
         {
-            int idShopRequest = (int)(shopRequestViewBindingSource.Current as DataRowView)["Id_shop_request"];
-            (requestStructViewBindingSource.Current as DataRowView)["Id_shop_request"] = idShopRequest;
-            requestStructViewBindingSource.EndEdit();
-            requestStructViewTableAdapter.Update(milkWorkDataSet.RequestStructView);
-            requestStructViewTableAdapter.Fill(milkWorkDataSet.RequestStructView);
+            AddingHandler.Handle(this, () =>
+            {
+                int idShopRequest = (int)(shopRequestViewBindingSource.Current as DataRowView)["Id_shop_request"];
+                (requestStructViewBindingSource.Current as DataRowView)["Id_shop_request"] = idShopRequest;
+                requestStructViewBindingSource.EndEdit();
+                requestStructViewTableAdapter.Update(milkWorkDataSet.RequestStructView);
+                requestStructViewTableAdapter.FillByShopRequest(milkWorkDataSet.RequestStructView, idShopRequest);
 
-            shopRequestStructGroupBox.Enabled = false;
+                shopRequestStructGroupBox.Enabled = false;
+            });
+        }
        
-    }
+   
 
         private void cancelRequestButton_Click(object sender, EventArgs e)
         {
             requestStructViewBindingSource.CancelEdit();
 
             shopRequestStructGroupBox.Enabled = false;
-        }       
+        }
+
+        private void reportButton_Click(object sender, EventArgs e)
+        {
+            new ShopRequestReporter().Report(milkWorkDataSet.ShopRequestView);
+        }
     }
 }

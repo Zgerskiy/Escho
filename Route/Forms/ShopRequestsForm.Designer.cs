@@ -68,6 +68,7 @@
             this.producttypenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productcountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportButton = new System.Windows.Forms.Button();
             date_of_requestLabel = new System.Windows.Forms.Label();
             id_shopLabel = new System.Windows.Forms.Label();
             id_productLabel = new System.Windows.Forms.Label();
@@ -467,11 +468,22 @@
             this.unitnameDataGridViewTextBoxColumn.Name = "unitnameDataGridViewTextBoxColumn";
             this.unitnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // reportButton
+            // 
+            this.reportButton.Location = new System.Drawing.Point(272, 15);
+            this.reportButton.Name = "reportButton";
+            this.reportButton.Size = new System.Drawing.Size(117, 23);
+            this.reportButton.TabIndex = 14;
+            this.reportButton.Text = "Вывести в отчет";
+            this.reportButton.UseVisualStyleBackColor = true;
+            this.reportButton.Click += new System.EventHandler(this.reportButton_Click);
+            // 
             // ShopRequestsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(957, 416);
+            this.Controls.Add(this.reportButton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.removeStructButton);
             this.Controls.Add(this.editStructButton);
@@ -538,5 +550,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unitnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button cancelRequestButton;
         private System.Windows.Forms.Button saveRequestButton;
+        private System.Windows.Forms.Button reportButton;
     }
 }

@@ -145,6 +145,7 @@
     <Compile Include="Helpers\InputForm.Designer.cs">
       <DependentUpon>InputForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ShopRequestReporter.cs" />
     <Compile Include="Helpers\RouteReporter.cs" />
     <Compile Include="MilkWorkDataSet.cs">
       <DependentUpon>MilkWorkDataSet.xsd</DependentUpon>

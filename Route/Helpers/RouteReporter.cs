@@ -146,7 +146,7 @@ namespace Route.Helpers
         private void CenteredCellValue(Range range)
         {
             range.HorizontalAlignment = Excel.Constants.xlCenter;
-            range.Range["A1"].VerticalAlignment = Excel.Constants.xlCenter;
+            range.VerticalAlignment = Excel.Constants.xlCenter;
         }
 
         private void SetCellValue(Range range, string value)
